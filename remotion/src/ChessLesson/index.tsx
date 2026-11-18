@@ -434,7 +434,7 @@ export const ChessLesson: React.FC = () => {
                   boxShadow: "0 20px 60px rgba(0,0,0,0.6)",
                 }}
               >
-                <div style={{ color: INK, fontSize: 104, fontWeight: 900, fontStyle: "italic", letterSpacing: -3, lineHeight: 1 }}>{ov.value.title}</div>
+                <div style={{ color: INK, fontSize: Math.min(104, Math.floor(800 / (ov.value.title.length * 0.62))), fontWeight: 900, fontStyle: "italic", letterSpacing: -3, lineHeight: 1 }}>{ov.value.title}</div>
                 {ov.value.sub ? <div style={{ color: INK, fontSize: 44, fontWeight: 800, marginTop: 10, opacity: 0.8 }}>{ov.value.sub}</div> : null}
               </div>
             </AbsoluteFill>
