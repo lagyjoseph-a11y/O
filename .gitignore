@@ -8,3 +8,4 @@ tools/whisper.cpp/
 tools/kokoro/
 tools/venv/
 remotion/whisper.cpp/
+external/

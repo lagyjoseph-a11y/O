@@ -16,4 +16,14 @@ mkdir -p tools/kokoro
 for f in kokoro-v1.0.onnx voices-v1.0.bin; do
   [ -f tools/kokoro/$f ] || curl -sSLf -o tools/kokoro/$f https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/$f
 done
-echo "OK"
+
+
+# Dépôts GitHub de référence (non versionnés)
+mkdir -p external
+for r in hassancs91/claude-faceless-shorts-creator lichess-org/chessground lichess-org/stockfish.wasm tsensei/OpenReels jnMetaCode/openshorts digitalsamba/claude-code-video-toolkit zhuyansen/awesome-claude-video-skills; do
+  [ -d "external/${r#*/}" ] || git clone --depth 1 "https://github.com/$r" "external/${r#*/}"
+done
+(cd external/claude-faceless-shorts-creator/remotion && npm install --no-audit --no-fund)
+(cd external/openshorts && npm install --no-audit --no-fund)
+(cd external/OpenReels && npx --yes pnpm@9 install --config.onnxruntime-node-install-cuda=skip)
+echo "OK external"

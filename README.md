@@ -18,7 +18,12 @@ avec le mot prononcé en jaune, zooms, écrans « TU CONNAIS SON NOM ? », voix 
 | **Kokoro** (voix locale gratuite, secours si pas d'ElevenLabs) | `tools/kokoro/` | `tools/venv/bin/python tools/tts_kokoro.py "texte" out.wav ff_siwis` |
 | Skills agent Remotion (13) + HyperFrames (6) | `.claude/skills/` | chargés automatiquement par Claude Code |
 
-Les outils lourds ne sont pas versionnés : `./setup.sh` les réinstalle.
+| **ElevenLabs** (connecteur claude.ai) | — | voix off, effets sonores, transcription |
+| `chessground` (pièces/plateau Lichess) + `stockfish` (moteur) | `remotion/node_modules` | `import` dans Remotion |
+| Dépôts GitHub clonés + dépendances installées | `external/` | voir ci-dessous |
+| Skills tirés des dépôts : `toolkit-elevenlabs`, `toolkit-ffmpeg`, `toolkit-video-design`, `toolkit-moviepy`, `faceless-make-short`, `faceless-suggest-sfx` | `.claude/skills/` | |
+
+Les outils lourds et `external/` ne sont pas versionnés : `./setup.sh` les réinstalle.
 
 ## Trouvé sur GitHub
 

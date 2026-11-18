@@ -15,9 +15,11 @@
     "@remotion/media-utils": "4.0.545",
     "@remotion/zod-types": "4.0.545",
     "chess.js": "^1.4.0",
+    "chessground": "^9.2.1",
     "react": "19.3.1",
     "react-dom": "19.3.1",
     "remotion": "4.0.545",
+    "stockfish": "^19.0.1",
     "zod": "4.6.7"
   },
   "devDependencies": {
