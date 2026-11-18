@@ -1,0 +1,15 @@
+[00:00.0 → 00:03.2] À ta prochaine partie, ouvre avec ton cavalier au lieu d'un pion.
+[00:03.2 → 00:05.7] Ton adversaire pousse son pion d au centre.
+[00:05.7 → 00:09.7] Maintenant, avance ton pion e juste à côté, comme un cadeau gratuit.
+[00:09.7 → 00:12.7] Il prend le pion. Presque tout le monde le fait.
+[00:12.7 → 00:16.7] Les vrais fans d'échecs connaissent le nom de ce gambit. Mets-le en commentaire.
+[00:16.7 → 00:20.7] Ton cavalier bondit en e5 et vise directement le pion f7.
+[00:20.7 → 00:24.7] Il chasse ton cavalier avec son pion f. C'est l'erreur fatale.
+[00:24.7 → 00:27.0] Dame en h5, échec !
+[00:27.0 → 00:31.0] Son roi ne peut pas fuir en d7 parce que ton cavalier contrôle cette case.
+[00:31.0 → 00:35.0] Il est donc obligé de bloquer avec son pion g. Et maintenant, ta dame est attaquée.
+[00:35.0 → 00:38.0] Laisse ta dame exactement là où elle est et sors ton fou.
+[00:38.0 → 00:41.0] Personne ne refuse une dame gratuite. Il la mange.
+[00:41.0 → 00:44.0] Fou prend f7, échec et mat !
+
+Partie : 1. Cf3 d5 2. e4 dxe4 3. Ce5 f6 4. Dh5+ g6 5. Fc4 gxh5 6. Ff7#

@@ -1,0 +1,10 @@
+node_modules/
+out/
+dist/
+renders/
+.env
+# Outils lourds (recréés par setup.sh)
+tools/whisper.cpp/
+tools/kokoro/
+tools/venv/
+remotion/whisper.cpp/
