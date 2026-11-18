@@ -1,0 +1,647 @@
+[
+ {
+  "text": "Si",
+  "startMs": 0,
+  "endMs": 180
+ },
+ {
+  "text": "ton",
+  "startMs": 180,
+  "endMs": 380
+ },
+ {
+  "text": "adversaire",
+  "startMs": 380,
+  "endMs": 920
+ },
+ {
+  "text": "répond",
+  "startMs": 920,
+  "endMs": 1540
+ },
+ {
+  "text": "d5",
+  "startMs": 1540,
+  "endMs": 1860
+ },
+ {
+  "text": "à",
+  "startMs": 1860,
+  "endMs": 2080
+ },
+ {
+  "text": "ton",
+  "startMs": 2080,
+  "endMs": 2280
+ },
+ {
+  "text": "d4,",
+  "startMs": 2280,
+  "endMs": 2880
+ },
+ {
+  "text": "joue",
+  "startMs": 3100,
+  "endMs": 3360
+ },
+ {
+  "text": "e4.",
+  "startMs": 3360,
+  "endMs": 4180
+ },
+ {
+  "text": "C'est",
+  "startMs": 4340,
+  "endMs": 4480
+ },
+ {
+  "text": "le",
+  "startMs": 4480,
+  "endMs": 4660
+ },
+ {
+  "text": "gambit",
+  "startMs": 4660,
+  "endMs": 5080
+ },
+ {
+  "text": "Blackmar-Diemer.",
+  "startMs": 5080,
+  "endMs": 5380
+ },
+ {
+  "text": "Il",
+  "startMs": 6300,
+  "endMs": 6480
+ },
+ {
+  "text": "prend",
+  "startMs": 6480,
+  "endMs": 6620
+ },
+ {
+  "text": "le",
+  "startMs": 6620,
+  "endMs": 6840
+ },
+ {
+  "text": "pion,",
+  "startMs": 6840,
+  "endMs": 6960
+ },
+ {
+  "text": "évidemment.",
+  "startMs": 7240,
+  "endMs": 7680
+ },
+ {
+  "text": "Sors",
+  "startMs": 8220,
+  "endMs": 8380
+ },
+ {
+  "text": "ton",
+  "startMs": 8380,
+  "endMs": 8560
+ },
+ {
+  "text": "cavalier",
+  "startMs": 8560,
+  "endMs": 8920
+ },
+ {
+  "text": "en",
+  "startMs": 8920,
+  "endMs": 9080
+ },
+ {
+  "text": "c3.",
+  "startMs": 9080,
+  "endMs": 9620
+ },
+ {
+  "text": "Il",
+  "startMs": 9900,
+  "endMs": 10160
+ },
+ {
+  "text": "sort",
+  "startMs": 10160,
+  "endMs": 10260
+ },
+ {
+  "text": "le",
+  "startMs": 10260,
+  "endMs": 10540
+ },
+ {
+  "text": "sien",
+  "startMs": 10540,
+  "endMs": 10720
+ },
+ {
+  "text": "en",
+  "startMs": 10720,
+  "endMs": 10900
+ },
+ {
+  "text": "c6.",
+  "startMs": 10900,
+  "endMs": 11740
+ },
+ {
+  "text": "Avance",
+  "startMs": 12060,
+  "endMs": 12240
+ },
+ {
+  "text": "ton",
+  "startMs": 12240,
+  "endMs": 12380
+ },
+ {
+  "text": "pion",
+  "startMs": 12380,
+  "endMs": 12660
+ },
+ {
+  "text": "en",
+  "startMs": 12660,
+  "endMs": 12820
+ },
+ {
+  "text": "d5",
+  "startMs": 12820,
+  "endMs": 13300
+ },
+ {
+  "text": "pour",
+  "startMs": 13300,
+  "endMs": 13520
+ },
+ {
+  "text": "chasser",
+  "startMs": 13520,
+  "endMs": 13840
+ },
+ {
+  "text": "son",
+  "startMs": 13840,
+  "endMs": 14080
+ },
+ {
+  "text": "cavalier.",
+  "startMs": 14080,
+  "endMs": 14480
+ },
+ {
+  "text": "Il",
+  "startMs": 14760,
+  "endMs": 15000
+ },
+ {
+  "text": "saute",
+  "startMs": 15000,
+  "endMs": 15220
+ },
+ {
+  "text": "en",
+  "startMs": 15220,
+  "endMs": 15380
+ },
+ {
+  "text": "e5.",
+  "startMs": 15380,
+  "endMs": 16040
+ },
+ {
+  "text": "Et",
+  "startMs": 16260,
+  "endMs": 16480
+ },
+ {
+  "text": "là,",
+  "startMs": 16480,
+  "endMs": 16840
+ },
+ {
+  "text": "ta",
+  "startMs": 17180,
+  "endMs": 17260
+ },
+ {
+  "text": "dame",
+  "startMs": 17260,
+  "endMs": 17480
+ },
+ {
+  "text": "en",
+  "startMs": 17480,
+  "endMs": 17600
+ },
+ {
+  "text": "d4 !",
+  "startMs": 17600,
+  "endMs": 18520
+ },
+ {
+  "text": "Elle",
+  "startMs": 18520,
+  "endMs": 18740
+ },
+ {
+  "text": "attaque",
+  "startMs": 18740,
+  "endMs": 19020
+ },
+ {
+  "text": "le",
+  "startMs": 19020,
+  "endMs": 19280
+ },
+ {
+  "text": "cavalier",
+  "startMs": 19280,
+  "endMs": 19680
+ },
+ {
+  "text": "et",
+  "startMs": 19680,
+  "endMs": 19920
+ },
+ {
+  "text": "le",
+  "startMs": 19920,
+  "endMs": 20080
+ },
+ {
+  "text": "pion",
+  "startMs": 20080,
+  "endMs": 20180
+ },
+ {
+  "text": "e4.",
+  "startMs": 20180,
+  "endMs": 20680
+ },
+ {
+  "text": "Il",
+  "startMs": 20980,
+  "endMs": 21180
+ },
+ {
+  "text": "recule",
+  "startMs": 21180,
+  "endMs": 21500
+ },
+ {
+  "text": "en",
+  "startMs": 21500,
+  "endMs": 21680
+ },
+ {
+  "text": "g6.",
+  "startMs": 21680,
+  "endMs": 22320
+ },
+ {
+  "text": "Fou",
+  "startMs": 22680,
+  "endMs": 22800
+ },
+ {
+  "text": "b5,",
+  "startMs": 22800,
+  "endMs": 23400
+ },
+ {
+  "text": "échec !",
+  "startMs": 23760,
+  "endMs": 24360
+ },
+ {
+  "text": "Il",
+  "startMs": 24360,
+  "endMs": 24620
+ },
+ {
+  "text": "bloque",
+  "startMs": 24620,
+  "endMs": 24820
+ },
+ {
+  "text": "avec",
+  "startMs": 24820,
+  "endMs": 25080
+ },
+ {
+  "text": "son",
+  "startMs": 25080,
+  "endMs": 25240
+ },
+ {
+  "text": "pion",
+  "startMs": 25240,
+  "endMs": 25400
+ },
+ {
+  "text": "en",
+  "startMs": 25400,
+  "endMs": 25560
+ },
+ {
+  "text": "c6.",
+  "startMs": 25560,
+  "endMs": 26060
+ },
+ {
+  "text": "C'est",
+  "startMs": 26360,
+  "endMs": 26520
+ },
+ {
+  "text": "l'erreur",
+  "startMs": 26520,
+  "endMs": 26900
+ },
+ {
+  "text": "fatale.",
+  "startMs": 26900,
+  "endMs": 27440
+ },
+ {
+  "text": "Prends",
+  "startMs": 27440,
+  "endMs": 28060
+ },
+ {
+  "text": "en",
+  "startMs": 28060,
+  "endMs": 28200
+ },
+ {
+  "text": "c6…",
+  "startMs": 28200,
+  "endMs": 28700
+ },
+ {
+  "text": "et",
+  "startMs": 28700,
+  "endMs": 29160
+ },
+ {
+  "text": "laisse",
+  "startMs": 29160,
+  "endMs": 29360
+ },
+ {
+  "text": "ta",
+  "startMs": 29360,
+  "endMs": 29520
+ },
+ {
+  "text": "dame",
+  "startMs": 29520,
+  "endMs": 29660
+ },
+ {
+  "text": "en",
+  "startMs": 29660,
+  "endMs": 29920
+ },
+ {
+  "text": "prise !",
+  "startMs": 29920,
+  "endMs": 30780
+ },
+ {
+  "text": "Personne",
+  "startMs": 30780,
+  "endMs": 31020
+ },
+ {
+  "text": "ne",
+  "startMs": 31020,
+  "endMs": 31240
+ },
+ {
+  "text": "refuse",
+  "startMs": 31240,
+  "endMs": 31420
+ },
+ {
+  "text": "une",
+  "startMs": 31420,
+  "endMs": 31600
+ },
+ {
+  "text": "dame",
+  "startMs": 31600,
+  "endMs": 31800
+ },
+ {
+  "text": "gratuite.",
+  "startMs": 31800,
+  "endMs": 32240
+ },
+ {
+  "text": "Il",
+  "startMs": 32520,
+  "endMs": 32640
+ },
+ {
+  "text": "la",
+  "startMs": 32640,
+  "endMs": 32900
+ },
+ {
+  "text": "mange.",
+  "startMs": 32900,
+  "endMs": 33180
+ },
+ {
+  "text": "Pion",
+  "startMs": 33520,
+  "endMs": 33800
+ },
+ {
+  "text": "prend",
+  "startMs": 33800,
+  "endMs": 33920
+ },
+ {
+  "text": "b7,",
+  "startMs": 33920,
+  "endMs": 34440
+ },
+ {
+  "text": "échec",
+  "startMs": 34840,
+  "endMs": 35020
+ },
+ {
+  "text": "à",
+  "startMs": 35020,
+  "endMs": 35140
+ },
+ {
+  "text": "la",
+  "startMs": 35140,
+  "endMs": 35280
+ },
+ {
+  "text": "découverte !",
+  "startMs": 35280,
+  "endMs": 35880
+ },
+ {
+  "text": "Il",
+  "startMs": 36120,
+  "endMs": 36320
+ },
+ {
+  "text": "bloque",
+  "startMs": 36320,
+  "endMs": 36520
+ },
+ {
+  "text": "avec",
+  "startMs": 36520,
+  "endMs": 36760
+ },
+ {
+  "text": "son",
+  "startMs": 36760,
+  "endMs": 36980
+ },
+ {
+  "text": "fou",
+  "startMs": 36980,
+  "endMs": 37100
+ },
+ {
+  "text": "en",
+  "startMs": 37100,
+  "endMs": 37260
+ },
+ {
+  "text": "d7.",
+  "startMs": 37260,
+  "endMs": 37740
+ },
+ {
+  "text": "Et",
+  "startMs": 38000,
+  "endMs": 38160
+ },
+ {
+  "text": "maintenant,",
+  "startMs": 38160,
+  "endMs": 38560
+ },
+ {
+  "text": "tu",
+  "startMs": 38780,
+  "endMs": 38880
+ },
+ {
+  "text": "prends",
+  "startMs": 38880,
+  "endMs": 39040
+ },
+ {
+  "text": "la",
+  "startMs": 39040,
+  "endMs": 39220
+ },
+ {
+  "text": "tour",
+  "startMs": 39220,
+  "endMs": 39360
+ },
+ {
+  "text": "en",
+  "startMs": 39360,
+  "endMs": 39540
+ },
+ {
+  "text": "a8,",
+  "startMs": 39540,
+  "endMs": 39940
+ },
+ {
+  "text": "tu",
+  "startMs": 40220,
+  "endMs": 40280
+ },
+ {
+  "text": "fais",
+  "startMs": 40280,
+  "endMs": 40420
+ },
+ {
+  "text": "une",
+  "startMs": 40420,
+  "endMs": 40580
+ },
+ {
+  "text": "nouvelle",
+  "startMs": 40580,
+  "endMs": 40780
+ },
+ {
+  "text": "dame…",
+  "startMs": 40780,
+  "endMs": 41240
+ },
+ {
+  "text": "Échec",
+  "startMs": 41660,
+  "endMs": 42080
+ },
+ {
+  "text": "et",
+  "startMs": 42080,
+  "endMs": 42500
+ },
+ {
+  "text": "mat !",
+  "startMs": 42500,
+  "endMs": 43300
+ },
+ {
+  "text": "Enregistre",
+  "startMs": 43300,
+  "endMs": 43780
+ },
+ {
+  "text": "cette",
+  "startMs": 43780,
+  "endMs": 43940
+ },
+ {
+  "text": "vidéo",
+  "startMs": 43940,
+  "endMs": 44280
+ },
+ {
+  "text": "pour",
+  "startMs": 44280,
+  "endMs": 44500
+ },
+ {
+  "text": "ta",
+  "startMs": 44500,
+  "endMs": 44640
+ },
+ {
+  "text": "prochaine",
+  "startMs": 44640,
+  "endMs": 44900
+ },
+ {
+  "text": "partie.",
+  "startMs": 44900,
+  "endMs": 45200
+ }
+]
