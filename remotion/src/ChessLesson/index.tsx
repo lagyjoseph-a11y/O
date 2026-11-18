@@ -227,7 +227,7 @@ const pages: Page[] = (() => {
 const Captions: React.FC<{ t: number; fps: number }> = ({ t, fps }) => {
   const page = pages.find((p) => t >= p.start && t < p.end);
   if (!page) return null;
-  const enter = spring({ frame: Math.round((t - page.start) * fps), fps, config: { damping: 15, stiffness: 240 } });
+  const enter = interpolate((t - page.start) * fps, [0, 3], [0, 1], { extrapolateRight: "clamp" });
   return (
     <div
       style={{
@@ -246,29 +246,22 @@ const Captions: React.FC<{ t: number; fps: number }> = ({ t, fps }) => {
         lineHeight: 1.15,
         letterSpacing: -1,
         opacity: enter,
-        transform: `translateY(${(1 - enter) * 40}px)`,
       }}
     >
       {page.words.map((w, i) => {
         const s = w.startMs / 1000;
         const active = t >= s && (i === page.words.length - 1 || t < page.words[i + 1].startMs / 1000);
         const said = t >= s;
-        const pop = active ? spring({ frame: Math.round((t - s) * fps), fps, config: { damping: 12, stiffness: 300 } }) : 0;
         return (
           <span
             key={i}
             style={{
-              position: "relative",
-              color: active ? INK : "#ffffff",
-              opacity: said ? 1 : 0.35,
-              padding: "2px 16px",
-              transform: active ? `scale(${1 + 0.08 * pop}) rotate(-2deg)` : "none",
-              textShadow: active ? "none" : "0 4px 0 rgba(0,0,0,0.6)",
+              color: active ? ACCENT : "#ffffff",
+              opacity: said ? 1 : 0.4,
+              padding: "2px 6px",
+              textShadow: active ? `0 0 18px ${ACCENT}66, 0 4px 0 rgba(0,0,0,0.6)` : "0 4px 0 rgba(0,0,0,0.6)",
             }}
           >
-            {active ? (
-              <span style={{ position: "absolute", inset: 0, background: ACCENT, borderRadius: 14, transform: `scaleX(${pop})`, transformOrigin: "left", boxShadow: `0 0 30px ${ACCENT}aa`, zIndex: -1 }} />
-            ) : null}
             {w.text.replace(/[.,]$/, "")}
           </span>
         );
