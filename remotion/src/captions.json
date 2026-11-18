@@ -7,641 +7,641 @@
  {
   "text": "ton",
   "startMs": 180,
-  "endMs": 380
+  "endMs": 340
  },
  {
   "text": "adversaire",
-  "startMs": 380,
-  "endMs": 920
+  "startMs": 340,
+  "endMs": 820
  },
  {
   "text": "répond",
-  "startMs": 920,
-  "endMs": 1540
+  "startMs": 820,
+  "endMs": 1120
  },
  {
   "text": "d5",
-  "startMs": 1540,
-  "endMs": 1860
+  "startMs": 1120,
+  "endMs": 1500
  },
  {
   "text": "à",
-  "startMs": 1860,
-  "endMs": 2080
+  "startMs": 1500,
+  "endMs": 1660
  },
  {
   "text": "ton",
-  "startMs": 2080,
-  "endMs": 2280
+  "startMs": 1660,
+  "endMs": 1760
  },
  {
   "text": "d4,",
-  "startMs": 2280,
-  "endMs": 2880
+  "startMs": 1760,
+  "endMs": 2360
  },
  {
   "text": "joue",
-  "startMs": 3100,
-  "endMs": 3360
+  "startMs": 2560,
+  "endMs": 2740
  },
  {
   "text": "e4.",
-  "startMs": 3360,
-  "endMs": 4180
+  "startMs": 2740,
+  "endMs": 3720
  },
  {
   "text": "C'est",
-  "startMs": 4340,
-  "endMs": 4480
+  "startMs": 3720,
+  "endMs": 3820
  },
  {
   "text": "le",
-  "startMs": 4480,
-  "endMs": 4660
+  "startMs": 3820,
+  "endMs": 3980
  },
  {
   "text": "gambit",
-  "startMs": 4660,
-  "endMs": 5080
+  "startMs": 3980,
+  "endMs": 4400
  },
  {
   "text": "Blackmar-Diemer.",
-  "startMs": 5080,
-  "endMs": 5380
+  "startMs": 4400,
+  "endMs": 4660
  },
  {
   "text": "Il",
-  "startMs": 6300,
-  "endMs": 6480
+  "startMs": 5660,
+  "endMs": 5800
  },
  {
   "text": "prend",
-  "startMs": 6480,
-  "endMs": 6620
+  "startMs": 5800,
+  "endMs": 5960
  },
  {
   "text": "le",
-  "startMs": 6620,
-  "endMs": 6840
+  "startMs": 5960,
+  "endMs": 6200
  },
  {
   "text": "pion,",
-  "startMs": 6840,
-  "endMs": 6960
+  "startMs": 6200,
+  "endMs": 6400
  },
  {
   "text": "évidemment.",
-  "startMs": 7240,
-  "endMs": 7680
+  "startMs": 6600,
+  "endMs": 7120
  },
  {
   "text": "Sors",
-  "startMs": 8220,
-  "endMs": 8380
+  "startMs": 7480,
+  "endMs": 7580
  },
  {
   "text": "ton",
-  "startMs": 8380,
-  "endMs": 8560
+  "startMs": 7580,
+  "endMs": 7780
  },
  {
   "text": "cavalier",
-  "startMs": 8560,
-  "endMs": 8920
+  "startMs": 7780,
+  "endMs": 8080
  },
  {
   "text": "en",
-  "startMs": 8920,
-  "endMs": 9080
+  "startMs": 8080,
+  "endMs": 8180
  },
  {
   "text": "c3.",
-  "startMs": 9080,
-  "endMs": 9620
+  "startMs": 8180,
+  "endMs": 8660
  },
  {
   "text": "Il",
-  "startMs": 9900,
-  "endMs": 10160
+  "startMs": 8880,
+  "endMs": 9120
  },
  {
   "text": "sort",
-  "startMs": 10160,
-  "endMs": 10260
+  "startMs": 9120,
+  "endMs": 9200
  },
  {
   "text": "le",
-  "startMs": 10260,
-  "endMs": 10540
+  "startMs": 9200,
+  "endMs": 9480
  },
  {
   "text": "sien",
-  "startMs": 10540,
-  "endMs": 10720
+  "startMs": 9480,
+  "endMs": 9540
  },
  {
   "text": "en",
-  "startMs": 10720,
-  "endMs": 10900
+  "startMs": 9540,
+  "endMs": 9660
  },
  {
   "text": "c6.",
-  "startMs": 10900,
-  "endMs": 11740
+  "startMs": 9660,
+  "endMs": 10260
  },
  {
   "text": "Avance",
-  "startMs": 12060,
-  "endMs": 12240
+  "startMs": 10620,
+  "endMs": 10800
  },
  {
   "text": "ton",
-  "startMs": 12240,
-  "endMs": 12380
+  "startMs": 10800,
+  "endMs": 10940
  },
  {
   "text": "pion",
-  "startMs": 12380,
-  "endMs": 12660
+  "startMs": 10940,
+  "endMs": 11160
  },
  {
   "text": "en",
-  "startMs": 12660,
-  "endMs": 12820
+  "startMs": 11160,
+  "endMs": 11280
  },
  {
   "text": "d5",
-  "startMs": 12820,
-  "endMs": 13300
+  "startMs": 11280,
+  "endMs": 11620
  },
  {
   "text": "pour",
-  "startMs": 13300,
-  "endMs": 13520
+  "startMs": 11620,
+  "endMs": 11820
  },
  {
   "text": "chasser",
-  "startMs": 13520,
-  "endMs": 13840
+  "startMs": 11820,
+  "endMs": 12140
  },
  {
   "text": "son",
-  "startMs": 13840,
-  "endMs": 14080
+  "startMs": 12140,
+  "endMs": 12380
  },
  {
   "text": "cavalier.",
-  "startMs": 14080,
-  "endMs": 14480
+  "startMs": 12380,
+  "endMs": 13060
  },
  {
   "text": "Il",
-  "startMs": 14760,
-  "endMs": 15000
+  "startMs": 13060,
+  "endMs": 13300
  },
  {
   "text": "saute",
-  "startMs": 15000,
-  "endMs": 15220
+  "startMs": 13300,
+  "endMs": 13540
  },
  {
   "text": "en",
-  "startMs": 15220,
-  "endMs": 15380
+  "startMs": 13540,
+  "endMs": 13680
  },
  {
   "text": "e5.",
-  "startMs": 15380,
-  "endMs": 16040
+  "startMs": 13680,
+  "endMs": 14320
  },
  {
   "text": "Et",
-  "startMs": 16260,
-  "endMs": 16480
+  "startMs": 14500,
+  "endMs": 14720
  },
  {
   "text": "là,",
-  "startMs": 16480,
-  "endMs": 16840
+  "startMs": 14720,
+  "endMs": 15160
  },
  {
   "text": "ta",
-  "startMs": 17180,
-  "endMs": 17260
+  "startMs": 15360,
+  "endMs": 15540
  },
  {
   "text": "dame",
-  "startMs": 17260,
-  "endMs": 17480
+  "startMs": 15540,
+  "endMs": 15720
  },
  {
   "text": "en",
-  "startMs": 17480,
-  "endMs": 17600
+  "startMs": 15720,
+  "endMs": 15880
  },
  {
   "text": "d4 !",
-  "startMs": 17600,
-  "endMs": 18520
+  "startMs": 15880,
+  "endMs": 16660
  },
  {
   "text": "Elle",
-  "startMs": 18520,
-  "endMs": 18740
+  "startMs": 16660,
+  "endMs": 16840
  },
  {
   "text": "attaque",
-  "startMs": 18740,
-  "endMs": 19020
+  "startMs": 16840,
+  "endMs": 17060
  },
  {
   "text": "le",
-  "startMs": 19020,
-  "endMs": 19280
+  "startMs": 17060,
+  "endMs": 17300
  },
  {
   "text": "cavalier",
-  "startMs": 19280,
-  "endMs": 19680
+  "startMs": 17300,
+  "endMs": 17660
  },
  {
   "text": "et",
-  "startMs": 19680,
-  "endMs": 19920
+  "startMs": 17660,
+  "endMs": 17920
  },
  {
   "text": "le",
-  "startMs": 19920,
-  "endMs": 20080
+  "startMs": 17920,
+  "endMs": 18120
  },
  {
   "text": "pion",
-  "startMs": 20080,
-  "endMs": 20180
+  "startMs": 18120,
+  "endMs": 18240
  },
  {
   "text": "e4.",
-  "startMs": 20180,
-  "endMs": 20680
+  "startMs": 18240,
+  "endMs": 18740
  },
  {
   "text": "Il",
-  "startMs": 20980,
-  "endMs": 21180
+  "startMs": 19000,
+  "endMs": 19200
  },
  {
   "text": "recule",
-  "startMs": 21180,
-  "endMs": 21500
+  "startMs": 19200,
+  "endMs": 19480
  },
  {
   "text": "en",
-  "startMs": 21500,
-  "endMs": 21680
+  "startMs": 19480,
+  "endMs": 19640
  },
  {
   "text": "g6.",
-  "startMs": 21680,
-  "endMs": 22320
+  "startMs": 19640,
+  "endMs": 20160
  },
  {
   "text": "Fou",
-  "startMs": 22680,
-  "endMs": 22800
+  "startMs": 20480,
+  "endMs": 20600
  },
  {
   "text": "b5,",
-  "startMs": 22800,
-  "endMs": 23400
+  "startMs": 20600,
+  "endMs": 21120
  },
  {
   "text": "échec !",
-  "startMs": 23760,
-  "endMs": 24360
+  "startMs": 21320,
+  "endMs": 21920
  },
  {
   "text": "Il",
-  "startMs": 24360,
-  "endMs": 24620
+  "startMs": 21920,
+  "endMs": 22160
  },
  {
   "text": "bloque",
-  "startMs": 24620,
-  "endMs": 24820
+  "startMs": 22160,
+  "endMs": 22380
  },
  {
   "text": "avec",
-  "startMs": 24820,
-  "endMs": 25080
+  "startMs": 22380,
+  "endMs": 22640
  },
  {
   "text": "son",
-  "startMs": 25080,
-  "endMs": 25240
+  "startMs": 22640,
+  "endMs": 22820
  },
  {
   "text": "pion",
-  "startMs": 25240,
-  "endMs": 25400
+  "startMs": 22820,
+  "endMs": 23000
  },
  {
   "text": "en",
-  "startMs": 25400,
-  "endMs": 25560
+  "startMs": 23000,
+  "endMs": 23140
  },
  {
   "text": "c6.",
-  "startMs": 25560,
-  "endMs": 26060
+  "startMs": 23140,
+  "endMs": 23680
  },
  {
   "text": "C'est",
-  "startMs": 26360,
-  "endMs": 26520
+  "startMs": 23900,
+  "endMs": 24120
  },
  {
   "text": "l'erreur",
-  "startMs": 26520,
-  "endMs": 26900
+  "startMs": 24120,
+  "endMs": 24520
  },
  {
   "text": "fatale.",
-  "startMs": 26900,
-  "endMs": 27440
+  "startMs": 24520,
+  "endMs": 25060
  },
  {
   "text": "Prends",
-  "startMs": 27440,
-  "endMs": 28060
+  "startMs": 25320,
+  "endMs": 25580
  },
  {
   "text": "en",
-  "startMs": 28060,
-  "endMs": 28200
+  "startMs": 25580,
+  "endMs": 25700
  },
  {
   "text": "c6…",
-  "startMs": 28200,
-  "endMs": 28700
+  "startMs": 25700,
+  "endMs": 26160
  },
  {
   "text": "et",
-  "startMs": 28700,
-  "endMs": 29160
+  "startMs": 26160,
+  "endMs": 26520
  },
  {
   "text": "laisse",
-  "startMs": 29160,
-  "endMs": 29360
+  "startMs": 26520,
+  "endMs": 26720
  },
  {
   "text": "ta",
-  "startMs": 29360,
-  "endMs": 29520
+  "startMs": 26720,
+  "endMs": 26880
  },
  {
   "text": "dame",
-  "startMs": 29520,
-  "endMs": 29660
+  "startMs": 26880,
+  "endMs": 27000
  },
  {
   "text": "en",
-  "startMs": 29660,
-  "endMs": 29920
+  "startMs": 27000,
+  "endMs": 27240
  },
  {
   "text": "prise !",
-  "startMs": 29920,
-  "endMs": 30780
+  "startMs": 27240,
+  "endMs": 27460
  },
  {
   "text": "Personne",
-  "startMs": 30780,
-  "endMs": 31020
+  "startMs": 27920,
+  "endMs": 28200
  },
  {
   "text": "ne",
-  "startMs": 31020,
-  "endMs": 31240
+  "startMs": 28200,
+  "endMs": 28440
  },
  {
   "text": "refuse",
-  "startMs": 31240,
-  "endMs": 31420
+  "startMs": 28440,
+  "endMs": 28600
  },
  {
   "text": "une",
-  "startMs": 31420,
-  "endMs": 31600
+  "startMs": 28600,
+  "endMs": 28780
  },
  {
   "text": "dame",
-  "startMs": 31600,
-  "endMs": 31800
+  "startMs": 28780,
+  "endMs": 28980
  },
  {
   "text": "gratuite.",
-  "startMs": 31800,
-  "endMs": 32240
+  "startMs": 28980,
+  "endMs": 29400
  },
  {
   "text": "Il",
-  "startMs": 32520,
-  "endMs": 32640
+  "startMs": 29400,
+  "endMs": 29800
  },
  {
   "text": "la",
-  "startMs": 32640,
-  "endMs": 32900
+  "startMs": 29800,
+  "endMs": 30080
  },
  {
   "text": "mange.",
-  "startMs": 32900,
-  "endMs": 33180
+  "startMs": 30080,
+  "endMs": 30440
  },
  {
   "text": "Pion",
-  "startMs": 33520,
-  "endMs": 33800
+  "startMs": 30760,
+  "endMs": 30900
  },
  {
   "text": "prend",
-  "startMs": 33800,
-  "endMs": 33920
+  "startMs": 30900,
+  "endMs": 31080
  },
  {
   "text": "b7,",
-  "startMs": 33920,
-  "endMs": 34440
+  "startMs": 31080,
+  "endMs": 31500
  },
  {
   "text": "échec",
-  "startMs": 34840,
-  "endMs": 35020
+  "startMs": 31820,
+  "endMs": 32000
  },
  {
   "text": "à",
-  "startMs": 35020,
-  "endMs": 35140
+  "startMs": 32000,
+  "endMs": 32100
  },
  {
   "text": "la",
-  "startMs": 35140,
-  "endMs": 35280
+  "startMs": 32100,
+  "endMs": 32240
  },
  {
   "text": "découverte !",
-  "startMs": 35280,
-  "endMs": 35880
+  "startMs": 32240,
+  "endMs": 32800
  },
  {
   "text": "Il",
-  "startMs": 36120,
-  "endMs": 36320
+  "startMs": 33040,
+  "endMs": 33260
  },
  {
   "text": "bloque",
-  "startMs": 36320,
-  "endMs": 36520
+  "startMs": 33260,
+  "endMs": 33460
  },
  {
   "text": "avec",
-  "startMs": 36520,
-  "endMs": 36760
+  "startMs": 33460,
+  "endMs": 33720
  },
  {
   "text": "son",
-  "startMs": 36760,
-  "endMs": 36980
+  "startMs": 33720,
+  "endMs": 33980
  },
  {
   "text": "fou",
-  "startMs": 36980,
-  "endMs": 37100
+  "startMs": 33980,
+  "endMs": 34080
  },
  {
   "text": "en",
-  "startMs": 37100,
-  "endMs": 37260
+  "startMs": 34080,
+  "endMs": 34260
  },
  {
   "text": "d7.",
-  "startMs": 37260,
-  "endMs": 37740
+  "startMs": 34260,
+  "endMs": 34700
  },
  {
   "text": "Et",
-  "startMs": 38000,
-  "endMs": 38160
+  "startMs": 35000,
+  "endMs": 35180
  },
  {
   "text": "maintenant,",
-  "startMs": 38160,
-  "endMs": 38560
+  "startMs": 35180,
+  "endMs": 35600
  },
  {
   "text": "tu",
-  "startMs": 38780,
-  "endMs": 38880
+  "startMs": 35980,
+  "endMs": 36120
  },
  {
   "text": "prends",
-  "startMs": 38880,
-  "endMs": 39040
+  "startMs": 36120,
+  "endMs": 36300
  },
  {
   "text": "la",
-  "startMs": 39040,
-  "endMs": 39220
+  "startMs": 36300,
+  "endMs": 36480
  },
  {
   "text": "tour",
-  "startMs": 39220,
-  "endMs": 39360
+  "startMs": 36480,
+  "endMs": 36600
  },
  {
   "text": "en",
-  "startMs": 39360,
-  "endMs": 39540
+  "startMs": 36600,
+  "endMs": 36760
  },
  {
   "text": "a8,",
-  "startMs": 39540,
-  "endMs": 39940
+  "startMs": 36760,
+  "endMs": 37100
  },
  {
   "text": "tu",
-  "startMs": 40220,
-  "endMs": 40280
+  "startMs": 37380,
+  "endMs": 37500
  },
  {
   "text": "fais",
-  "startMs": 40280,
-  "endMs": 40420
+  "startMs": 37500,
+  "endMs": 37660
  },
  {
   "text": "une",
-  "startMs": 40420,
-  "endMs": 40580
+  "startMs": 37660,
+  "endMs": 37860
  },
  {
   "text": "nouvelle",
-  "startMs": 40580,
-  "endMs": 40780
+  "startMs": 37860,
+  "endMs": 38040
  },
  {
   "text": "dame…",
-  "startMs": 40780,
-  "endMs": 41240
+  "startMs": 38040,
+  "endMs": 38420
  },
  {
   "text": "Échec",
-  "startMs": 41660,
-  "endMs": 42080
+  "startMs": 38800,
+  "endMs": 39220
  },
  {
   "text": "et",
-  "startMs": 42080,
-  "endMs": 42500
+  "startMs": 39220,
+  "endMs": 39520
  },
  {
   "text": "mat !",
-  "startMs": 42500,
-  "endMs": 43300
+  "startMs": 39520,
+  "endMs": 40180
  },
  {
   "text": "Enregistre",
-  "startMs": 43300,
-  "endMs": 43780
+  "startMs": 40180,
+  "endMs": 40680
  },
  {
   "text": "cette",
-  "startMs": 43780,
-  "endMs": 43940
+  "startMs": 40680,
+  "endMs": 40820
  },
  {
   "text": "vidéo",
-  "startMs": 43940,
-  "endMs": 44280
+  "startMs": 40820,
+  "endMs": 41120
  },
  {
   "text": "pour",
-  "startMs": 44280,
-  "endMs": 44500
+  "startMs": 41120,
+  "endMs": 41340
  },
  {
   "text": "ta",
-  "startMs": 44500,
-  "endMs": 44640
+  "startMs": 41340,
+  "endMs": 41500
  },
  {
   "text": "prochaine",
-  "startMs": 44640,
-  "endMs": 44900
+  "startMs": 41500,
+  "endMs": 41740
  },
  {
   "text": "partie.",
-  "startMs": 44900,
-  "endMs": 45200
+  "startMs": 41740,
+  "endMs": 42060
  }
 ]

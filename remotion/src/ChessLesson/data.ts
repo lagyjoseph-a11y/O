@@ -22,7 +22,7 @@ export const TITLE = "Le gambit Blackmar-Diemer";
 export const SUBTITLE = "Mat en 9 coups";
 export const KICKER = "LEÇON // OUVERTURE";
 export const AUDIO = "voix-blackmar.mp3";
-export const DURATION_S = 46.4;
+export const DURATION_S = 43.4;
 
 // Instant (s) du n-ième mot exact du script.
 const at = (word: string, n = 1): number => {
