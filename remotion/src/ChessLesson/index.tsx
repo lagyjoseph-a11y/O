@@ -478,6 +478,9 @@ export const ChessLesson: React.FC<{ lessonId: string }> = ({ lessonId }) => {
       <Chips L={L} t={t} />
       <Captions L={L} t={t} fps={fps} />
 
+      {/* Watermark */}
+      <div style={{ position: "absolute", left: 0, right: 0, bottom: 58, textAlign: "center", color: "rgba(255,255,255,0.35)", fontSize: 32, fontWeight: 700, letterSpacing: 2 }}>@gambit_frr</div>
+
       {/* Barre de progression en bas */}
       <div style={{ position: "absolute", left: 0, bottom: 0, height: 10, width: W * (frame / durationInFrames), background: `linear-gradient(90deg, #2a4a8a, ${ACCENT})`, boxShadow: `0 0 20px ${ACCENT}` }} />
     </AbsoluteFill>
