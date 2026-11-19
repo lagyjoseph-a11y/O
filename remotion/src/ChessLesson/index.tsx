@@ -47,7 +47,14 @@ const START: Record<string, string> = {};
 type Piece = { id: string; type: string; sq: string };
 type MoveState = { pieces: Piece[]; moved?: { id: string; from: string; to: string }; captured?: Piece };
 
-const sqXY = (sq: string) => ({ x: (sq.charCodeAt(0) - 97) * SQ, y: (8 - Number(sq[1])) * SQ });
+// Orientation du plateau : fixée par la leçon au début du rendu de la composition
+// (un onglet de rendu ne rend qu'une composition à la fois).
+let FLIP = false;
+const sqXY = (sq: string) => {
+  const f = sq.charCodeAt(0) - 97;
+  const r = Number(sq[1]);
+  return FLIP ? { x: (7 - f) * SQ, y: (r - 1) * SQ } : { x: f * SQ, y: (8 - r) * SQ };
+};
 const center = (sq: string) => {
   const p = sqXY(sq);
   return { x: p.x + SQ / 2, y: p.y + SQ / 2 };
@@ -176,12 +183,12 @@ const Board: React.FC<{ L: Prepared; t: number; frame: number; fps: number }> = 
           })
         : null}
       {marks.map(markEl)}
-      {"abcdefgh".split("").map((f, i) => (
+      {(FLIP ? "hgfedcba" : "abcdefgh").split("").map((f, i) => (
         <div key={"f" + f} style={{ position: "absolute", left: i * SQ + SQ - 24, top: BOARD - 30, fontFamily: FONT, fontWeight: 800, fontSize: 20, color: i % 2 === 0 ? LIGHT_SQ : DARK_SQ }}>
           {f}
         </div>
       ))}
-      {[8, 7, 6, 5, 4, 3, 2, 1].map((r, i) => (
+      {(FLIP ? [1, 2, 3, 4, 5, 6, 7, 8] : [8, 7, 6, 5, 4, 3, 2, 1]).map((r, i) => (
         <div key={"r" + r} style={{ position: "absolute", left: 8, top: i * SQ + 6, fontFamily: FONT, fontWeight: 800, fontSize: 20, color: i % 2 === 0 ? DARK_SQ : LIGHT_SQ }}>
           {r}
         </div>
@@ -312,6 +319,7 @@ const Chips: React.FC<{ L: Prepared; t: number }> = ({ L, t }) => {
 // ---------- Composition ----------
 export const ChessLesson: React.FC<{ lessonId: string }> = ({ lessonId }) => {
   const L = prepare(LESSONS[lessonId]);
+  FLIP = L.lesson.orientation === "black";
   const beats = L.beats;
   const moveBeats = L.moveBeats;
   const frame = useCurrentFrame();

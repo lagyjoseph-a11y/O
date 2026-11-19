@@ -18,6 +18,7 @@ export type Lesson = {
   title: string; // « Le gambit … » : la fin s'affiche en grand
   subtitle: string;
   audio: string; // fichier dans public/
+  orientation?: "white" | "black"; // côté du joueur, en bas de l'écran (blanc par défaut)
   durationS: number;
   captions: Caption[];
   beats: Beat[];
