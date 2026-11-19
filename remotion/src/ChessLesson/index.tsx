@@ -11,6 +11,7 @@ import {
   useCurrentFrame,
   useVideoConfig,
 } from "remotion";
+import { WATERMARK, WATERMARK_OPACITY } from "./brand";
 import { LESSONS } from "./lessons";
 import { Arrow, Beat, Caption, Color, Lesson, Mark } from "./types";
 
@@ -479,7 +480,7 @@ export const ChessLesson: React.FC<{ lessonId: string }> = ({ lessonId }) => {
       <Captions L={L} t={t} fps={fps} />
 
       {/* Watermark */}
-      <div style={{ position: "absolute", left: 0, right: 0, bottom: 58, textAlign: "center", color: "rgba(255,255,255,0.35)", fontSize: 32, fontWeight: 700, letterSpacing: 2 }}>@gambit_frr</div>
+      <div style={{ position: "absolute", left: 0, right: 0, bottom: 58, textAlign: "center", color: `rgba(255,255,255,${WATERMARK_OPACITY})`, fontSize: 32, fontWeight: 700, letterSpacing: 2 }}>{WATERMARK}</div>
 
       {/* Barre de progression en bas */}
       <div style={{ position: "absolute", left: 0, bottom: 0, height: 10, width: W * (frame / durationInFrames), background: `linear-gradient(90deg, #2a4a8a, ${ACCENT})`, boxShadow: `0 0 20px ${ACCENT}` }} />
