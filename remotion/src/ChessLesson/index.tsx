@@ -245,6 +245,7 @@ const Captions: React.FC<{ L: Prepared; t: number; fps: number }> = ({ L, t, fps
     <div
       style={{
         position: "absolute",
+        zIndex: 40,
         top: 1600,
         left: 50,
         right: 50,
@@ -313,6 +314,67 @@ const Chips: React.FC<{ L: Prepared; t: number }> = ({ L, t }) => {
         );
       })}
     </div>
+  );
+};
+
+// ---------- Écran de promo (e-book) ----------
+const Promo: React.FC<{ promo: NonNullable<Lesson["promo"]>; t: number; fps: number; frame: number }> = ({ promo, t, fps, frame }) => {
+  const since = t - promo.t;
+  if (since < 0) return null;
+  const f = Math.round(since * fps);
+  const bg = interpolate(f, [0, 8], [0, 1], { extrapolateRight: "clamp" });
+  const cover = spring({ frame: f - 4, fps, config: { damping: 13, stiffness: 120 } });
+  const price = spring({ frame: f - 16, fps, config: { damping: 9, stiffness: 220 } });
+  const cta = spring({ frame: f - 24, fps, config: { damping: 14, stiffness: 180 } });
+  const float = Math.sin(frame / 14) * 10;
+  const arrow = Math.sin(frame / 5) * 10;
+  const [l1, l2] = promo.title.split("|");
+  return (
+    <AbsoluteFill style={{ zIndex: 30, opacity: bg, background: "radial-gradient(ellipse at 50% 38%, #163059 0%, #0a1222 55%, #04070e 100%)" }}>
+      <AbsoluteFill style={{ backgroundImage: "radial-gradient(rgba(140,180,255,0.13) 1.5px, transparent 1.5px)", backgroundSize: "36px 36px" }} />
+      <div style={{ position: "absolute", top: 110, left: 0, right: 0, textAlign: "center", transform: `translateY(${(1 - cover) * -40}px)`, opacity: cover }}>
+        <div style={{ display: "inline-block", background: ACCENT, color: INK, fontWeight: 900, fontSize: 30, letterSpacing: 5, padding: "8px 22px", borderRadius: 999 }}>NOUVEAU · E-BOOK</div>
+        <div style={{ color: "#fff", fontSize: 50, fontWeight: 800, letterSpacing: 6, marginTop: 22 }}>{l1}</div>
+        <div style={{ color: ACCENT, fontSize: 96, fontWeight: 900, fontStyle: "italic", lineHeight: 1, letterSpacing: -2, textShadow: `0 0 40px ${ACCENT}88` }}>{l2}</div>
+      </div>
+      <div style={{ position: "absolute", top: 400, left: 0, right: 0, display: "flex", justifyContent: "center", perspective: 1400 }}>
+        <div style={{ position: "relative", transform: `translateY(${(1 - cover) * 300 + float}px) rotateY(${-16 + 6 * cover}deg) rotateZ(-4deg) scale(${0.7 + 0.3 * cover})` }}>
+          <Img src={staticFile(promo.image)} style={{ width: 540, borderRadius: 18, boxShadow: `0 0 0 4px ${ACCENT}, 0 0 80px ${ACCENT}77, 30px 40px 80px rgba(0,0,0,0.7)` }} />
+          <div
+            style={{
+              position: "absolute",
+              top: -40,
+              right: -70,
+              width: 210,
+              height: 210,
+              borderRadius: "50%",
+              background: COLORS.red,
+              color: "#fff",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              transform: `scale(${price}) rotate(${12 - 4 * price}deg)`,
+              boxShadow: `0 0 50px ${COLORS.red}99, 0 16px 30px rgba(0,0,0,0.5)`,
+              border: "5px solid #fff",
+            }}
+          >
+            <div style={{ fontSize: 26, fontWeight: 800, letterSpacing: 2, opacity: 0.9 }}>SEULEMENT</div>
+            <div style={{ fontSize: 62, fontWeight: 900, lineHeight: 1, letterSpacing: -2 }}>{promo.price}</div>
+          </div>
+        </div>
+      </div>
+      <div style={{ position: "absolute", top: 1235, left: 0, right: 0, display: "flex", justifyContent: "center", gap: 14, opacity: cta, transform: `translateY(${(1 - cta) * 30}px)` }}>
+        {["10 PIÈGES", "10 EXERCICES", "PLAN 7 JOURS"].map((x) => (
+          <div key={x} style={{ color: "#cfe6ff", fontWeight: 800, fontSize: 26, padding: "8px 16px", borderRadius: 999, border: "2px solid rgba(53,214,255,0.45)", background: "rgba(53,214,255,0.08)" }}>{x}</div>
+        ))}
+      </div>
+      <div style={{ position: "absolute", top: 1340, left: 0, right: 0, textAlign: "center", opacity: cta, transform: `scale(${0.8 + 0.2 * cta})` }}>
+        <div style={{ display: "inline-flex", alignItems: "center", gap: 18, background: "#fff", color: INK, fontWeight: 900, fontStyle: "italic", fontSize: 52, padding: "14px 34px", borderRadius: 18, boxShadow: `0 0 40px ${ACCENT}aa` }}>
+          <span style={{ display: "inline-block", transform: `translateY(${-Math.abs(arrow)}px)` }}>↑</span> LIEN DANS MA BIO <span style={{ display: "inline-block", transform: `translateY(${-Math.abs(arrow)}px)` }}>↑</span>
+        </div>
+      </div>
+    </AbsoluteFill>
   );
 };
 
@@ -485,13 +547,14 @@ export const ChessLesson: React.FC<{ lessonId: string }> = ({ lessonId }) => {
       ) : null}
 
       <Chips L={L} t={t} />
+      {L.lesson.promo ? <Promo promo={L.lesson.promo} t={t} fps={fps} frame={frame} /> : null}
       <Captions L={L} t={t} fps={fps} />
 
       {/* Watermark */}
-      <div style={{ position: "absolute", left: 0, right: 0, bottom: 58, textAlign: "center", color: `rgba(255,255,255,${WATERMARK_OPACITY})`, fontSize: 32, fontWeight: 700, letterSpacing: 2 }}>{WATERMARK}</div>
+      <div style={{ position: "absolute", zIndex: 40, left: 0, right: 0, bottom: 58, textAlign: "center", color: `rgba(255,255,255,${WATERMARK_OPACITY})`, fontSize: 32, fontWeight: 700, letterSpacing: 2 }}>{WATERMARK}</div>
 
       {/* Barre de progression en bas */}
-      <div style={{ position: "absolute", left: 0, bottom: 0, height: 10, width: W * (frame / durationInFrames), background: `linear-gradient(90deg, #2a4a8a, ${ACCENT})`, boxShadow: `0 0 20px ${ACCENT}` }} />
+      <div style={{ position: "absolute", zIndex: 40, left: 0, bottom: 0, height: 10, width: W * (frame / durationInFrames), background: `linear-gradient(90deg, #2a4a8a, ${ACCENT})`, boxShadow: `0 0 20px ${ACCENT}` }} />
     </AbsoluteFill>
   );
 };

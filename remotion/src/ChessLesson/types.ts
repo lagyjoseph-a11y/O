@@ -20,6 +20,7 @@ export type Lesson = {
   audio: string; // fichier dans public/
   orientation?: "white" | "black"; // côté du joueur, en bas de l'écran (blanc par défaut)
   durationS: number;
+  promo?: { t: number; image: string; price: string; title: string }; // écran de promo final
   captions: Caption[];
   beats: Beat[];
 };

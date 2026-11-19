@@ -1,0 +1,12 @@
+[
+ {"id":"tennison","nom":"Le gambit Tennison","camp":"w","coups":["Nf3","d5","e4","dxe4","Ne5","f6","Qh5+","g6","Bc4","gxh5","Bf7#"]},
+ {"id":"blackmar","nom":"Le gambit Blackmar-Diemer","camp":"w","coups":["d4","d5","e4","dxe4","Nc3","Nc6","d5","Ne5","Qd4","Ng6","Bb5+","c6","dxc6","Qxd4","cxb7+","Bd7","bxa8=Q#"]},
+ {"id":"roi","nom":"Le gambit du roi","camp":"w","coups":["e4","e5","f4","exf4","Nf3","d5","Nc3","dxe4","Nxe4","Bg4","Qe2","Bxf3","Nf6#"]},
+ {"id":"legal","nom":"Le piège de Légal","camp":"w","coups":["e4","e5","Nf3","d6","Bc4","Bg4","Nc3","g6","Nxe5","Bxd1","Bxf7+","Ke7","Nd5#"]},
+ {"id":"soller","nom":"Le gambit Soller","camp":"b","coups":["d4","e5","dxe5","f6","exf6","Nxf6","Nf3","Bc5","Bg5","Ne4","Bxd8","Bxf2#"]},
+ {"id":"englund","nom":"Le gambit Englund","camp":"b","coups":["d4","e5","dxe5","Nc6","Nf3","Qe7","Bf4","Qb4+","Bd2","Qxb2","Bc3","Bb4","Qd2","Bxc3","Qxc3","Qc1#"]},
+ {"id":"budapest","nom":"Le gambit de Budapest","camp":"b","coups":["d4","Nf6","c4","e5","dxe5","Ng4","Bf4","Nc6","Nf3","Bb4+","Nbd2","Qe7","a3","Ngxe5","axb4","Nd3#"]},
+ {"id":"stafford","nom":"Le gambit Stafford","camp":"b","coups":["e4","e5","Nf3","Nf6","Nxe5","Nc6","Nxc6","dxc6","d3","Bc5","Bg5","Nxe4","Bxd8","Bxf2+","Ke2","Bg4#"]},
+ {"id":"shilling","nom":"Le gambit Blackburne-Shilling","camp":"b","coups":["e4","e5","Nf3","Nc6","Bc4","Nd4","Nxe5","Qg5","Nxf7","Qxg2","Rf1","Qxe4+","Be2","Nf3#"]},
+ {"id":"siberien","nom":"Le piège sibérien","camp":"b","coups":["e4","c5","d4","cxd4","c3","dxc3","Nxc3","Nc6","Nf3","e6","Bc4","Qc7","O-O","Nf6","Qe2","Ng4","h3","Nd4","Nxd4","Qh2#"]}
+]

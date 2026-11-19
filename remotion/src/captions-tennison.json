@@ -1,0 +1,512 @@
+[
+ {
+  "text": "Au",
+  "startMs": 0,
+  "endMs": 180
+ },
+ {
+  "text": "lieu",
+  "startMs": 180,
+  "endMs": 280
+ },
+ {
+  "text": "d'ouvrir",
+  "startMs": 280,
+  "endMs": 660
+ },
+ {
+  "text": "avec",
+  "startMs": 660,
+  "endMs": 840
+ },
+ {
+  "text": "un",
+  "startMs": 840,
+  "endMs": 1100
+ },
+ {
+  "text": "pion,",
+  "startMs": 1100,
+  "endMs": 1320
+ },
+ {
+  "text": "commence",
+  "startMs": 1660,
+  "endMs": 1800
+ },
+ {
+  "text": "avec",
+  "startMs": 1800,
+  "endMs": 2020
+ },
+ {
+  "text": "ton",
+  "startMs": 2020,
+  "endMs": 2240
+ },
+ {
+  "text": "cavalier",
+  "startMs": 2240,
+  "endMs": 2580
+ },
+ {
+  "text": "en",
+  "startMs": 2580,
+  "endMs": 2780
+ },
+ {
+  "text": "f3 !",
+  "startMs": 2780,
+  "endMs": 3780
+ },
+ {
+  "text": "Il",
+  "startMs": 3780,
+  "endMs": 3900
+ },
+ {
+  "text": "pousse",
+  "startMs": 3900,
+  "endMs": 4140
+ },
+ {
+  "text": "son",
+  "startMs": 4140,
+  "endMs": 4400
+ },
+ {
+  "text": "pion",
+  "startMs": 4400,
+  "endMs": 4560
+ },
+ {
+  "text": "en",
+  "startMs": 4560,
+  "endMs": 4720
+ },
+ {
+  "text": "d5.",
+  "startMs": 4720,
+  "endMs": 5440
+ },
+ {
+  "text": "Avance",
+  "startMs": 5720,
+  "endMs": 5940
+ },
+ {
+  "text": "ton",
+  "startMs": 5940,
+  "endMs": 6100
+ },
+ {
+  "text": "pion",
+  "startMs": 6100,
+  "endMs": 6320
+ },
+ {
+  "text": "e4,",
+  "startMs": 6320,
+  "endMs": 6880
+ },
+ {
+  "text": "et",
+  "startMs": 6880,
+  "endMs": 7240
+ },
+ {
+  "text": "offre-le-lui.",
+  "startMs": 7240,
+  "endMs": 7520
+ },
+ {
+  "text": "Il",
+  "startMs": 8200,
+  "endMs": 8320
+ },
+ {
+  "text": "le",
+  "startMs": 8320,
+  "endMs": 8540
+ },
+ {
+  "text": "prend",
+  "startMs": 8540,
+  "endMs": 8640
+ },
+ {
+  "text": "tout",
+  "startMs": 8640,
+  "endMs": 8900
+ },
+ {
+  "text": "de",
+  "startMs": 8900,
+  "endMs": 8980
+ },
+ {
+  "text": "suite.",
+  "startMs": 8980,
+  "endMs": 9240
+ },
+ {
+  "text": "C'est",
+  "startMs": 9460,
+  "endMs": 9600
+ },
+ {
+  "text": "le",
+  "startMs": 9600,
+  "endMs": 9780
+ },
+ {
+  "text": "gambit",
+  "startMs": 9780,
+  "endMs": 10240
+ },
+ {
+  "text": "Tennison.",
+  "startMs": 10240,
+  "endMs": 10800
+ },
+ {
+  "text": "Ton",
+  "startMs": 11140,
+  "endMs": 11340
+ },
+ {
+  "text": "cavalier",
+  "startMs": 11340,
+  "endMs": 11780
+ },
+ {
+  "text": "saute",
+  "startMs": 11780,
+  "endMs": 12040
+ },
+ {
+  "text": "en",
+  "startMs": 12040,
+  "endMs": 12160
+ },
+ {
+  "text": "e5",
+  "startMs": 12160,
+  "endMs": 12680
+ },
+ {
+  "text": "et",
+  "startMs": 12680,
+  "endMs": 12840
+ },
+ {
+  "text": "vise",
+  "startMs": 12840,
+  "endMs": 13060
+ },
+ {
+  "text": "directement",
+  "startMs": 13060,
+  "endMs": 13620
+ },
+ {
+  "text": "f7.",
+  "startMs": 13620,
+  "endMs": 14160
+ },
+ {
+  "text": "Il",
+  "startMs": 14440,
+  "endMs": 14600
+ },
+ {
+  "text": "le",
+  "startMs": 14600,
+  "endMs": 14840
+ },
+ {
+  "text": "chasse",
+  "startMs": 14840,
+  "endMs": 15040
+ },
+ {
+  "text": "avec",
+  "startMs": 15040,
+  "endMs": 15260
+ },
+ {
+  "text": "son",
+  "startMs": 15260,
+  "endMs": 15460
+ },
+ {
+  "text": "pion",
+  "startMs": 15460,
+  "endMs": 15660
+ },
+ {
+  "text": "en",
+  "startMs": 15660,
+  "endMs": 15900
+ },
+ {
+  "text": "f6…",
+  "startMs": 15900,
+  "endMs": 16520
+ },
+ {
+  "text": "Dame",
+  "startMs": 16800,
+  "endMs": 17100
+ },
+ {
+  "text": "h5,",
+  "startMs": 17140,
+  "endMs": 17720
+ },
+ {
+  "text": "échec !",
+  "startMs": 17720,
+  "endMs": 18400
+ },
+ {
+  "text": "Son",
+  "startMs": 18400,
+  "endMs": 18580
+ },
+ {
+  "text": "roi",
+  "startMs": 18580,
+  "endMs": 18780
+ },
+ {
+  "text": "n'a",
+  "startMs": 18780,
+  "endMs": 19020
+ },
+ {
+  "text": "aucune",
+  "startMs": 19020,
+  "endMs": 19380
+ },
+ {
+  "text": "case.",
+  "startMs": 19380,
+  "endMs": 19640
+ },
+ {
+  "text": "Il",
+  "startMs": 19900,
+  "endMs": 20080
+ },
+ {
+  "text": "doit",
+  "startMs": 20080,
+  "endMs": 20220
+ },
+ {
+  "text": "bloquer",
+  "startMs": 20220,
+  "endMs": 20620
+ },
+ {
+  "text": "avec",
+  "startMs": 20620,
+  "endMs": 20820
+ },
+ {
+  "text": "son",
+  "startMs": 20820,
+  "endMs": 20980
+ },
+ {
+  "text": "pion",
+  "startMs": 20980,
+  "endMs": 21160
+ },
+ {
+  "text": "g6.",
+  "startMs": 21160,
+  "endMs": 21800
+ },
+ {
+  "text": "Et",
+  "startMs": 22020,
+  "endMs": 22180
+ },
+ {
+  "text": "là,",
+  "startMs": 22180,
+  "endMs": 22540
+ },
+ {
+  "text": "sors",
+  "startMs": 22840,
+  "endMs": 23040
+ },
+ {
+  "text": "ton",
+  "startMs": 23040,
+  "endMs": 23240
+ },
+ {
+  "text": "fou",
+  "startMs": 23240,
+  "endMs": 23340
+ },
+ {
+  "text": "en",
+  "startMs": 23340,
+  "endMs": 23460
+ },
+ {
+  "text": "c4…",
+  "startMs": 23460,
+  "endMs": 24040
+ },
+ {
+  "text": "en",
+  "startMs": 24040,
+  "endMs": 24400
+ },
+ {
+  "text": "laissant",
+  "startMs": 24400,
+  "endMs": 24680
+ },
+ {
+  "text": "ta",
+  "startMs": 24680,
+  "endMs": 24860
+ },
+ {
+  "text": "dame",
+  "startMs": 24860,
+  "endMs": 25000
+ },
+ {
+  "text": "en",
+  "startMs": 25000,
+  "endMs": 25200
+ },
+ {
+  "text": "prise !",
+  "startMs": 25200,
+  "endMs": 25400
+ },
+ {
+  "text": "Il",
+  "startMs": 25720,
+  "endMs": 25880
+ },
+ {
+  "text": "la",
+  "startMs": 25880,
+  "endMs": 26120
+ },
+ {
+  "text": "mange.",
+  "startMs": 26120,
+  "endMs": 26420
+ },
+ {
+  "text": "Fou",
+  "startMs": 26820,
+  "endMs": 26960
+ },
+ {
+  "text": "f7…",
+  "startMs": 26960,
+  "endMs": 27520
+ },
+ {
+  "text": "Échec",
+  "startMs": 27900,
+  "endMs": 28240
+ },
+ {
+  "text": "et",
+  "startMs": 28240,
+  "endMs": 28560
+ },
+ {
+  "text": "mat !",
+  "startMs": 28560,
+  "endMs": 29080
+ },
+ {
+  "text": "Tu",
+  "startMs": 29080,
+  "endMs": 29320
+ },
+ {
+  "text": "veux",
+  "startMs": 29320,
+  "endMs": 29500
+ },
+ {
+  "text": "10",
+  "startMs": 29500,
+  "endMs": 29740
+ },
+ {
+  "text": "pièges",
+  "startMs": 29740,
+  "endMs": 29960
+ },
+ {
+  "text": "comme",
+  "startMs": 29960,
+  "endMs": 30160
+ },
+ {
+  "text": "celui-là ?",
+  "startMs": 30160,
+  "endMs": 30360
+ },
+ {
+  "text": "Mon",
+  "startMs": 30900,
+  "endMs": 31040
+ },
+ {
+  "text": "e-book",
+  "startMs": 31040,
+  "endMs": 31380
+ },
+ {
+  "text": "est",
+  "startMs": 31380,
+  "endMs": 31560
+ },
+ {
+  "text": "dans",
+  "startMs": 31560,
+  "endMs": 31660
+ },
+ {
+  "text": "ma",
+  "startMs": 31660,
+  "endMs": 31860
+ },
+ {
+  "text": "bio,",
+  "startMs": 31860,
+  "endMs": 32020
+ },
+ {
+  "text": "à",
+  "startMs": 32020,
+  "endMs": 32300
+ },
+ {
+  "text": "seulement",
+  "startMs": 32300,
+  "endMs": 32680
+ },
+ {
+  "text": "5,99 € !",
+  "startMs": 32680,
+  "endMs": 33480
+ }
+]

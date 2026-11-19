@@ -20,3 +20,8 @@ Vidéos TikTok verticales (1080×1920) de pièges d'échecs, faites avec Remotio
 2. Écrire le script, générer la voix (Léo), `process_voice.sh`, `tools/word_times.py` puis `scripts/align-captions.mjs`.
 3. Créer `remotion/src/ChessLesson/lessons/<id>.ts` et l'ajouter dans `lessons/index.ts`.
 4. Mixer la musique, rendre : `npx remotion render Gambit-<id> ../renders/<nom>.mp4 --codec=h264 --crf=18`.
+
+## E-book « 10 pièges d'ouverture » (5,99 €)
+- Source : `ebook/contenu.mjs` (textes) + `ebook/pieges.json` (lignes vérifiées par chess.js). Générer : `node ebook/build.mjs`
+  → `ebook/10-pieges-d-ouverture.pdf` et `ebook/couverture.png`.
+- Écran de promo de fin de vidéo : champ `promo` d'une leçon (voir `lessons/tennison.ts`), image `public/ebook-couverture.png`.
