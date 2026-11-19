@@ -1,39 +1,10 @@
-import captionsJson from "../captions.json";
+import captionsJson from "../../captions-blackmar.json";
+import { Beat, Caption, Lesson, makeAt } from "../types";
 
-export type Caption = { text: string; startMs: number; endMs: number };
-export const captions = captionsJson as Caption[];
+const captions = captionsJson as Caption[];
+const at = makeAt(captions);
 
-export type Color = "gold" | "green" | "red" | "grey";
-export type Arrow = { from: string; to: string; color: Color };
-export type Mark = { sq: string; color: Color };
-
-export type Beat = {
-  t: number; // secondes
-  move?: { from: string; to: string; promo?: "Q"; san: string };
-  label?: { text: string; color: Color } | null;
-  arrows?: Arrow[];
-  marks?: Mark[];
-  zoom?: { sq: string; scale: number } | null;
-  overlay?: { title: string; sub?: string } | null;
-  sfx?: "whoosh" | "impact";
-};
-
-export const TITLE = "Le gambit Blackmar-Diemer";
-export const SUBTITLE = "Mat en 9 coups";
-export const KICKER = "LEÇON // OUVERTURE";
-export const AUDIO = "mix-blackmar.mp3";
-export const DURATION_S = 43.4;
-
-// Instant (s) du n-ième mot exact du script.
-const at = (word: string, n = 1): number => {
-  let k = 0;
-  for (const c of captions) {
-    if (c.text === word && ++k === n) return c.startMs / 1000;
-  }
-  throw new Error(`Mot introuvable : ${word} #${n}`);
-};
-
-export const beats: Beat[] = [
+const beats: Beat[] = [
   { t: 0.05, move: { from: "d2", to: "d4", san: "d4" }, label: { text: "TU JOUES 1. d4", color: "gold" } },
   { t: at("d5"), move: { from: "d7", to: "d5", san: "d5" }, label: null },
   { t: at("e4."), move: { from: "e2", to: "e4", san: "e4" }, label: { text: "LE GAMBIT : 2. e4", color: "gold" }, marks: [{ sq: "e4", color: "gold" }] },
@@ -60,3 +31,12 @@ export const beats: Beat[] = [
   { t: at("Échec"), overlay: { title: "ÉCHEC ET MAT", sub: "9. bxa8=D#" }, zoom: null, sfx: "impact" },
   { t: at("Enregistre"), overlay: null, label: { text: "ENREGISTRE CETTE VIDÉO", color: "gold" } },
 ];
+
+export const blackmar: Lesson = {
+  title: "Le gambit Blackmar-Diemer",
+  subtitle: "Mat en 9 coups",
+  audio: "mix-blackmar.mp3",
+  durationS: 43.4,
+  captions,
+  beats,
+};

@@ -5,21 +5,25 @@ import {
   captionedVideoSchema,
 } from "./CaptionedVideo";
 import { ChessLesson } from "./ChessLesson";
-import { DURATION_S } from "./ChessLesson/data";
+import { LESSONS } from "./ChessLesson/lessons";
 
 // Each <Composition> is an entry in the sidebar!
 
 export const RemotionRoot: React.FC = () => {
   return (
     <>
-      <Composition
-        id="GambitBlackmarDiemer"
-        component={ChessLesson}
-        fps={30}
-        width={1080}
-        height={1920}
-        durationInFrames={Math.ceil(DURATION_S * 30)}
-      />
+      {Object.keys(LESSONS).map((id) => (
+        <Composition
+          key={id}
+          id={`Gambit-${id}`}
+          component={ChessLesson}
+          fps={30}
+          width={1080}
+          height={1920}
+          durationInFrames={Math.ceil(LESSONS[id].durationS * 30)}
+          defaultProps={{ lessonId: id }}
+        />
+      ))}
       <Composition
         id="CaptionedVideo"
         component={CaptionedVideo}

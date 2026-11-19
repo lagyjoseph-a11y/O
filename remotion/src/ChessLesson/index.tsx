@@ -11,7 +11,8 @@ import {
   useCurrentFrame,
   useVideoConfig,
 } from "remotion";
-import { AUDIO, Arrow, Beat, beats, captions, Color, Mark, SUBTITLE, TITLE } from "./data";
+import { LESSONS } from "./lessons";
+import { Arrow, Beat, Caption, Color, Lesson, Mark } from "./types";
 
 // ---------- Identité visuelle « néon minuit » ----------
 const W = 1080;
@@ -51,24 +52,43 @@ const center = (sq: string) => {
   return { x: p.x + SQ / 2, y: p.y + SQ / 2 };
 };
 
-const moveBeats = beats.filter((b) => b.move);
-const TOTAL_MOVES = Math.ceil(moveBeats.length / 2);
-const states: MoveState[] = (() => {
+type Page = { words: Caption[]; start: number; end: number };
+type Prepared = { lesson: Lesson; beats: Beat[]; moveBeats: Beat[]; total: number; states: MoveState[]; pages: Page[] };
+const cache = new Map<Lesson, Prepared>();
+
+function prepare(lesson: Lesson): Prepared {
+  const hit = cache.get(lesson);
+  if (hit) return hit;
+  const beats = [...lesson.beats].sort((x, y) => x.t - y.t);
+  const moveBeats = beats.filter((x) => x.move);
   let pieces: Piece[] = Object.keys(START).map((sq) => ({ id: sq, type: START[sq], sq }));
-  const out: MoveState[] = [{ pieces }];
-  for (const b of moveBeats) {
-    const m = b.move!;
-    const mover = pieces.find((p) => p.sq === m.from)!;
+  const states: MoveState[] = [{ pieces }];
+  for (const mb of moveBeats) {
+    const m = mb.move!;
+    const mover = pieces.find((p) => p.sq === m.from);
+    if (!mover) throw new Error(`Aucune pièce en ${m.from}`);
     const captured = pieces.find((p) => p.sq === m.to);
     pieces = pieces
       .filter((p) => p !== captured)
       .map((p) => (p === mover ? { ...p, sq: m.to, type: m.promo ? p.type[0] + m.promo : p.type } : p));
-    out.push({ pieces, moved: { id: mover.id, from: m.from, to: m.to }, captured });
+    states.push({ pieces, moved: { id: mover.id, from: m.from, to: m.to }, captured });
   }
+  const pages: Page[] = [];
+  let cur: Caption[] = [];
+  lesson.captions.forEach((c, i) => {
+    cur.push(c);
+    if (/[.,!?…]$/.test(c.text) || cur.length >= 3 || i === lesson.captions.length - 1) {
+      pages.push({ words: cur, start: cur[0].startMs / 1000, end: 0 });
+      cur = [];
+    }
+  });
+  pages.forEach((pg, i) => (pg.end = i + 1 < pages.length ? pages[i + 1].start : pg.words[pg.words.length - 1].endMs / 1000 + 1.2));
+  const out = { lesson, beats, moveBeats, total: Math.ceil(moveBeats.length / 2), states, pages };
+  cache.set(lesson, out);
   return out;
-})();
+}
 
-function latest<K extends keyof Beat>(t: number, key: K, clearOnMove = false): { value: Beat[K] | undefined; since: number } {
+function latest<K extends keyof Beat>(beats: Beat[], t: number, key: K, clearOnMove = false): { value: Beat[K] | undefined; since: number } {
   let value: Beat[K] | undefined;
   let since = 0;
   for (const b of beats) {
@@ -108,19 +128,19 @@ const ArrowSvg: React.FC<{ a: Arrow; progress: number }> = ({ a, progress }) => 
   );
 };
 
-const Board: React.FC<{ t: number; frame: number; fps: number }> = ({ t, frame, fps }) => {
+const Board: React.FC<{ L: Prepared; t: number; frame: number; fps: number }> = ({ L, t, frame, fps }) => {
   let n = 0;
   let lastT = 0;
-  for (const b of moveBeats) {
+  for (const b of L.moveBeats) {
     if (b.t <= t) {
       n++;
       lastT = b.t;
     }
   }
-  const st = states[n];
+  const st = L.states[n];
   const prog = n === 0 ? 1 : interpolate((t - lastT) * fps, [0, 9], [0, 1], { extrapolateRight: "clamp", easing: Easing.out(Easing.cubic) });
-  const arrowsS = latest(t, "arrows", true);
-  const marksS = latest(t, "marks", true);
+  const arrowsS = latest(L.beats, t, "arrows", true);
+  const marksS = latest(L.beats, t, "marks", true);
   const arrows = arrowsS.value ?? [];
   const marks = marksS.value ?? [];
   const arrowProg = interpolate((t - arrowsS.since) * fps, [0, 10], [0, 1], { extrapolateRight: "clamp", easing: Easing.out(Easing.quad) });
@@ -209,23 +229,8 @@ const Board: React.FC<{ t: number; frame: number; fps: number }> = ({ t, frame, 
 };
 
 // ---------- Sous-titres : mot actif surligné ----------
-type Page = { words: typeof captions; start: number; end: number };
-const pages: Page[] = (() => {
-  const out: Page[] = [];
-  let cur: typeof captions = [];
-  captions.forEach((c, i) => {
-    cur.push(c);
-    if (/[.,!?…]$/.test(c.text) || cur.length >= 3 || i === captions.length - 1) {
-      out.push({ words: cur, start: cur[0].startMs / 1000, end: 0 });
-      cur = [];
-    }
-  });
-  out.forEach((p, i) => (p.end = i + 1 < out.length ? out[i + 1].start : p.words[p.words.length - 1].endMs / 1000 + 1.2));
-  return out;
-})();
-
-const Captions: React.FC<{ t: number; fps: number }> = ({ t, fps }) => {
-  const page = pages.find((p) => t >= p.start && t < p.end);
+const Captions: React.FC<{ L: Prepared; t: number; fps: number }> = ({ L, t, fps }) => {
+  const page = L.pages.find((p) => t >= p.start && t < p.end);
   if (!page) return null;
   const enter = interpolate((t - page.start) * fps, [0, 3], [0, 1], { extrapolateRight: "clamp" });
   return (
@@ -271,8 +276,8 @@ const Captions: React.FC<{ t: number; fps: number }> = ({ t, fps }) => {
 };
 
 // ---------- Notation en pastilles ----------
-const Chips: React.FC<{ t: number }> = ({ t }) => {
-  const played = moveBeats.filter((b) => b.t <= t);
+const Chips: React.FC<{ L: Prepared; t: number }> = ({ L, t }) => {
+  const played = L.moveBeats.filter((b) => b.t <= t);
   const shown = played.map((b, i) => ({ s: b.move!.san, i })).slice(-5);
   return (
     <div style={{ position: "absolute", top: BOARD_Y + BOARD + BORDER * 2 + 26, left: 0, right: 0, display: "flex", justifyContent: "center", gap: 12 }}>
@@ -304,7 +309,10 @@ const Chips: React.FC<{ t: number }> = ({ t }) => {
 };
 
 // ---------- Composition ----------
-export const ChessLesson: React.FC = () => {
+export const ChessLesson: React.FC<{ lessonId: string }> = ({ lessonId }) => {
+  const L = prepare(LESSONS[lessonId]);
+  const beats = L.beats;
+  const moveBeats = L.moveBeats;
   const frame = useCurrentFrame();
   const { fps, durationInFrames } = useVideoConfig();
   const t = frame / fps;
@@ -340,21 +348,21 @@ export const ChessLesson: React.FC = () => {
   const sinceMove = lastMoveB ? (t - lastMoveB.t) * fps : 999;
   const punch = 1 + interpolate(sinceMove, [0, 4, 12], [0, 0.012, 0], { extrapolateRight: "clamp" });
 
-  const lab = latest(t, "label");
+  const lab = latest(beats, t, "label");
   const labIn = spring({ frame: Math.round((t - lab.since) * fps), fps, config: { damping: 13, stiffness: 210 } });
-  const ov = latest(t, "overlay");
+  const ov = latest(beats, t, "overlay");
   const ovIn = ov.value ? spring({ frame: Math.round((t - ov.since) * fps), fps, config: { damping: 14, stiffness: 170 } }) : 0;
   const headIn = spring({ frame, fps, config: { damping: 18, stiffness: 120 } });
   const coup = Math.max(1, Math.ceil(movesPlayed / 2));
 
   const [titleA, titleB] = (() => {
-    const m = TITLE.match(/^(.*?gambit)\s+(.*)$/i);
-    return m ? [m[1], m[2]] : ["", TITLE];
+    const m = L.lesson.title.match(/^(.*?gambit)\s+(.*)$/i);
+    return m ? [m[1], m[2]] : ["", L.lesson.title];
   })();
 
   return (
     <AbsoluteFill style={{ background: "radial-gradient(ellipse at 50% 40%, #13223f 0%, #0a1222 50%, #04070e 100%)", fontFamily: FONT, overflow: "hidden" }}>
-      <Audio src={staticFile(AUDIO)} />
+      <Audio src={staticFile(L.lesson.audio)} />
       {beats.map((b, i) =>
         b.move || b.sfx ? (
           <Sequence key={"s" + i} from={Math.round(b.t * fps)} durationInFrames={30} layout="none">
@@ -393,13 +401,13 @@ export const ChessLesson: React.FC = () => {
         >
           {titleB}
         </div>
-        <div style={{ color: "#9fb0c8", fontSize: 28, fontWeight: 700, letterSpacing: 6, marginTop: 16 }}>{SUBTITLE.toUpperCase()}</div>
+        <div style={{ color: "#9fb0c8", fontSize: 28, fontWeight: 700, letterSpacing: 6, marginTop: 16 }}>{L.lesson.subtitle.toUpperCase()}</div>
       </div>
 
       {/* Infos au-dessus du plateau */}
       <div style={{ position: "absolute", top: BOARD_Y - 58, left: BOARD_X, right: BOARD_X, display: "flex", justifyContent: "flex-end", gap: 12, fontWeight: 800, fontSize: 26 }}>
         <div style={{ color: INK, background: "#fff", padding: "6px 16px", borderRadius: 999 }}>
-          COUP {coup}/{TOTAL_MOVES}
+          COUP {coup}/{L.total}
         </div>
       </div>
 
@@ -419,7 +427,7 @@ export const ChessLesson: React.FC = () => {
       >
         <div style={{ position: "absolute", left: BORDER, top: BORDER, width: BOARD, height: BOARD, overflow: "hidden", borderRadius: 26 }}>
           <div style={{ position: "absolute", width: BOARD, height: BOARD, transformOrigin: `${zx}px ${zy}px`, transform: `scale(${zScale})`, filter: `brightness(${1 - 0.55 * ovIn}) saturate(${1 - 0.5 * ovIn})` }}>
-            <Board t={t} frame={frame} fps={fps} />
+            <Board L={L} t={t} frame={frame} fps={fps} />
           </div>
           {/* Bande diagonale */}
           {ov.value ? (
@@ -467,8 +475,8 @@ export const ChessLesson: React.FC = () => {
         </div>
       ) : null}
 
-      <Chips t={t} />
-      <Captions t={t} fps={fps} />
+      <Chips L={L} t={t} />
+      <Captions L={L} t={t} fps={fps} />
 
       {/* Barre de progression en bas */}
       <div style={{ position: "absolute", left: 0, bottom: 0, height: 10, width: W * (frame / durationInFrames), background: `linear-gradient(90deg, #2a4a8a, ${ACCENT})`, boxShadow: `0 0 20px ${ACCENT}` }} />

@@ -1,0 +1,507 @@
+[
+ {
+  "text": "Joue",
+  "startMs": 0,
+  "endMs": 400
+ },
+ {
+  "text": "e4.",
+  "startMs": 400,
+  "endMs": 1200
+ },
+ {
+  "text": "S'il",
+  "startMs": 1420,
+  "endMs": 1600
+ },
+ {
+  "text": "répond",
+  "startMs": 1600,
+  "endMs": 1840
+ },
+ {
+  "text": "e5,",
+  "startMs": 1840,
+  "endMs": 2560
+ },
+ {
+  "text": "sors",
+  "startMs": 2760,
+  "endMs": 2920
+ },
+ {
+  "text": "l'arme",
+  "startMs": 2920,
+  "endMs": 3240
+ },
+ {
+  "text": "secrète :",
+  "startMs": 3240,
+  "endMs": 3740
+ },
+ {
+  "text": "f4 !",
+  "startMs": 3940,
+  "endMs": 4620
+ },
+ {
+  "text": "C'est",
+  "startMs": 4820,
+  "endMs": 5000
+ },
+ {
+  "text": "le",
+  "startMs": 5000,
+  "endMs": 5240
+ },
+ {
+  "text": "gambit",
+  "startMs": 5240,
+  "endMs": 5600
+ },
+ {
+  "text": "du",
+  "startMs": 5600,
+  "endMs": 5800
+ },
+ {
+  "text": "roi.",
+  "startMs": 5800,
+  "endMs": 6300
+ },
+ {
+  "text": "Il",
+  "startMs": 6480,
+  "endMs": 6700
+ },
+ {
+  "text": "prend",
+  "startMs": 6700,
+  "endMs": 6860
+ },
+ {
+  "text": "ton",
+  "startMs": 6860,
+  "endMs": 7060
+ },
+ {
+  "text": "pion,",
+  "startMs": 7060,
+  "endMs": 7300
+ },
+ {
+  "text": "évidemment.",
+  "startMs": 7300,
+  "endMs": 7940
+ },
+ {
+  "text": "Sors",
+  "startMs": 8320,
+  "endMs": 8420
+ },
+ {
+  "text": "ton",
+  "startMs": 8420,
+  "endMs": 8680
+ },
+ {
+  "text": "cavalier",
+  "startMs": 8680,
+  "endMs": 8940
+ },
+ {
+  "text": "en",
+  "startMs": 8940,
+  "endMs": 9080
+ },
+ {
+  "text": "f3.",
+  "startMs": 9080,
+  "endMs": 9480
+ },
+ {
+  "text": "Il",
+  "startMs": 9760,
+  "endMs": 10060
+ },
+ {
+  "text": "contre-attaque",
+  "startMs": 10060,
+  "endMs": 10300
+ },
+ {
+  "text": "au",
+  "startMs": 10520,
+  "endMs": 10700
+ },
+ {
+  "text": "centre",
+  "startMs": 10700,
+  "endMs": 10880
+ },
+ {
+  "text": "avec",
+  "startMs": 10880,
+  "endMs": 11160
+ },
+ {
+  "text": "d5.",
+  "startMs": 11160,
+  "endMs": 11820
+ },
+ {
+  "text": "Développe",
+  "startMs": 12100,
+  "endMs": 12440
+ },
+ {
+  "text": "ton",
+  "startMs": 12440,
+  "endMs": 12600
+ },
+ {
+  "text": "autre",
+  "startMs": 12600,
+  "endMs": 12900
+ },
+ {
+  "text": "cavalier",
+  "startMs": 12900,
+  "endMs": 13240
+ },
+ {
+  "text": "en",
+  "startMs": 13240,
+  "endMs": 13360
+ },
+ {
+  "text": "c3.",
+  "startMs": 13360,
+  "endMs": 13840
+ },
+ {
+  "text": "Il",
+  "startMs": 14140,
+  "endMs": 14420
+ },
+ {
+  "text": "mange",
+  "startMs": 14420,
+  "endMs": 14580
+ },
+ {
+  "text": "le",
+  "startMs": 14580,
+  "endMs": 14760
+ },
+ {
+  "text": "pion",
+  "startMs": 14760,
+  "endMs": 14860
+ },
+ {
+  "text": "e4.",
+  "startMs": 14860,
+  "endMs": 15400
+ },
+ {
+  "text": "Reprends",
+  "startMs": 15780,
+  "endMs": 15980
+ },
+ {
+  "text": "avec",
+  "startMs": 15980,
+  "endMs": 16180
+ },
+ {
+  "text": "le",
+  "startMs": 16180,
+  "endMs": 16440
+ },
+ {
+  "text": "cavalier !",
+  "startMs": 16440,
+  "endMs": 16780
+ },
+ {
+  "text": "Il",
+  "startMs": 17120,
+  "endMs": 17460
+ },
+ {
+  "text": "cloue",
+  "startMs": 17460,
+  "endMs": 17600
+ },
+ {
+  "text": "ton",
+  "startMs": 17600,
+  "endMs": 17800
+ },
+ {
+  "text": "cavalier",
+  "startMs": 17800,
+  "endMs": 18160
+ },
+ {
+  "text": "avec",
+  "startMs": 18160,
+  "endMs": 18360
+ },
+ {
+  "text": "son",
+  "startMs": 18360,
+  "endMs": 18620
+ },
+ {
+  "text": "fou",
+  "startMs": 18620,
+  "endMs": 18720
+ },
+ {
+  "text": "en",
+  "startMs": 18720,
+  "endMs": 18900
+ },
+ {
+  "text": "g4.",
+  "startMs": 18900,
+  "endMs": 19480
+ },
+ {
+  "text": "Et",
+  "startMs": 19660,
+  "endMs": 19900
+ },
+ {
+  "text": "là…",
+  "startMs": 19900,
+  "endMs": 20260
+ },
+ {
+  "text": "ta",
+  "startMs": 20680,
+  "endMs": 20900
+ },
+ {
+  "text": "dame",
+  "startMs": 20900,
+  "endMs": 21140
+ },
+ {
+  "text": "en",
+  "startMs": 21140,
+  "endMs": 21280
+ },
+ {
+  "text": "e2…",
+  "startMs": 21280,
+  "endMs": 22160
+ },
+ {
+  "text": "Ça",
+  "startMs": 22260,
+  "endMs": 22460
+ },
+ {
+  "text": "a",
+  "startMs": 22460,
+  "endMs": 22540
+ },
+ {
+  "text": "l'air",
+  "startMs": 22540,
+  "endMs": 22680
+ },
+ {
+  "text": "défensif,",
+  "startMs": 22680,
+  "endMs": 23320
+ },
+ {
+  "text": "mais",
+  "startMs": 23500,
+  "endMs": 23620
+ },
+ {
+  "text": "regarde",
+  "startMs": 23620,
+  "endMs": 24000
+ },
+ {
+  "text": "bien",
+  "startMs": 24000,
+  "endMs": 24260
+ },
+ {
+  "text": "la",
+  "startMs": 24260,
+  "endMs": 24460
+ },
+ {
+  "text": "colonne",
+  "startMs": 24460,
+  "endMs": 24700
+ },
+ {
+  "text": "e.",
+  "startMs": 24700,
+  "endMs": 25060
+ },
+ {
+  "text": "Il",
+  "startMs": 25260,
+  "endMs": 25600
+ },
+ {
+  "text": "mange",
+  "startMs": 25600,
+  "endMs": 25780
+ },
+ {
+  "text": "ton",
+  "startMs": 25780,
+  "endMs": 25980
+ },
+ {
+  "text": "cavalier",
+  "startMs": 25980,
+  "endMs": 26320
+ },
+ {
+  "text": "en",
+  "startMs": 26320,
+  "endMs": 26440
+ },
+ {
+  "text": "f3.",
+  "startMs": 26440,
+  "endMs": 26920
+ },
+ {
+  "text": "Grosse",
+  "startMs": 26920,
+  "endMs": 27460
+ },
+ {
+  "text": "erreur !",
+  "startMs": 27460,
+  "endMs": 28220
+ },
+ {
+  "text": "Cavalier",
+  "startMs": 28220,
+  "endMs": 28540
+ },
+ {
+  "text": "f6…",
+  "startMs": 28540,
+  "endMs": 29040
+ },
+ {
+  "text": "Double",
+  "startMs": 29400,
+  "endMs": 29520
+ },
+ {
+  "text": "échec !",
+  "startMs": 29520,
+  "endMs": 30220
+ },
+ {
+  "text": "Le",
+  "startMs": 30220,
+  "endMs": 30380
+ },
+ {
+  "text": "roi",
+  "startMs": 30380,
+  "endMs": 30560
+ },
+ {
+  "text": "ne",
+  "startMs": 30560,
+  "endMs": 30720
+ },
+ {
+  "text": "peut",
+  "startMs": 30720,
+  "endMs": 30900
+ },
+ {
+  "text": "plus",
+  "startMs": 30900,
+  "endMs": 31120
+ },
+ {
+  "text": "bouger.",
+  "startMs": 31120,
+  "endMs": 31580
+ },
+ {
+  "text": "Échec",
+  "startMs": 31840,
+  "endMs": 32100
+ },
+ {
+  "text": "et",
+  "startMs": 32100,
+  "endMs": 32280
+ },
+ {
+  "text": "mat",
+  "startMs": 32280,
+  "endMs": 32380
+ },
+ {
+  "text": "en",
+  "startMs": 32380,
+  "endMs": 32660
+ },
+ {
+  "text": "sept",
+  "startMs": 32660,
+  "endMs": 32880
+ },
+ {
+  "text": "coups !",
+  "startMs": 32880,
+  "endMs": 33560
+ },
+ {
+  "text": "Enregistre",
+  "startMs": 33560,
+  "endMs": 34040
+ },
+ {
+  "text": "cette",
+  "startMs": 34040,
+  "endMs": 34180
+ },
+ {
+  "text": "vidéo",
+  "startMs": 34180,
+  "endMs": 34480
+ },
+ {
+  "text": "pour",
+  "startMs": 34480,
+  "endMs": 34700
+ },
+ {
+  "text": "ta",
+  "startMs": 34700,
+  "endMs": 34860
+ },
+ {
+  "text": "prochaine",
+  "startMs": 34860,
+  "endMs": 35140
+ },
+ {
+  "text": "partie.",
+  "startMs": 35140,
+  "endMs": 35440
+ }
+]
