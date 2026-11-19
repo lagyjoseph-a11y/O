@@ -113,7 +113,7 @@ const COUVERTURE = `
   <p style="font-size:12pt;color:#fff;font-weight:600;margin:0">${LIVRE.sousTitre}</p></div>
   <div class="diag">${couvDiag}</div>
   <div style="display:flex;justify-content:space-between;align-items:flex-end">
-    <div><div style="font-size:9pt;color:#9fb0c8;font-weight:700;letter-spacing:2px">5 PIÈGES BLANCS · 5 PIÈGES NOIRS · 10 EXERCICES</div>
+    <div><div style="font-size:9pt;color:#9fb0c8;font-weight:700;letter-spacing:2px">4 PIÈGES BLANCS · 6 PIÈGES NOIRS · 10 EXERCICES</div>
     <div style="font-size:14pt;font-weight:900;margin-top:6px">${LIVRE.auteur}</div></div>
   </div>`;
 page(COUVERTURE, "couv");
