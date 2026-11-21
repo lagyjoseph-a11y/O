@@ -33,20 +33,39 @@ def phonetique(t: str) -> str:
 
 
 # Réglages par ton : vitesse (length_scale, <1 = plus rapide), variation, régularité, gain dB, pause après (s)
+# Réglages par ton : vitesse (length_scale, >1 = plus lent), variation, régularité, gain dB, pause après (s), hauteur (demi-tons)
 PRESETS = {
-    "epique": {  # calibré sur la clarté mesurée par Whisper (98 % de mots compris en moyenne)
-        "exclamation": (0.95, 0.60, 0.50, 2.5, 0.22),
-        "question": (0.95, 0.60, 0.50, 1.0, 0.30),
-        "suspense": (1.02, 0.55, 0.45, 0.0, 0.50),
-        "normal": (0.95, 0.60, 0.50, 0.0, 0.22),
+    "epique": {
+        "exclamation": (0.97, 0.60, 0.40, 3.0, 0.25, +1.5),
+        "question": (1.00, 0.60, 0.40, 1.0, 0.35, +1.0),
+        "suspense": (1.10, 0.55, 0.35, -1.0, 0.60, -1.0),
+        "normal": (1.00, 0.58, 0.40, 0.0, 0.25, 0.0),
+        "mat": (1.18, 0.55, 0.35, 4.0, 0.50, +2.0),
     },
     "clair": {
-        "exclamation": (0.95, 0.60, 0.45, 1.5, 0.25),
-        "question": (1.0, 0.60, 0.45, 0.5, 0.30),
-        "suspense": (1.08, 0.55, 0.40, 0.0, 0.55),
-        "normal": (1.0, 0.55, 0.40, 0.0, 0.25),
+        "exclamation": (1.00, 0.55, 0.40, 1.5, 0.25, 0.0),
+        "question": (1.02, 0.55, 0.40, 0.5, 0.30, 0.0),
+        "suspense": (1.10, 0.50, 0.35, 0.0, 0.55, 0.0),
+        "normal": (1.02, 0.55, 0.40, 0.0, 0.25, 0.0),
+        "mat": (1.15, 0.50, 0.35, 2.0, 0.50, 0.0),
     },
 }
+
+
+def hauteur(a, sr, demi_tons):
+    """Change la hauteur d'une phrase (formants préservés, haute qualité) via rubberband."""
+    if abs(demi_tons) < 0.01:
+        return a
+    import subprocess, tempfile
+    with tempfile.TemporaryDirectory() as d:
+        i, o = os.path.join(d, "i.wav"), os.path.join(d, "o.wav")
+        with wave.open(i, "wb") as w:
+            w.setnchannels(1); w.setsampwidth(2); w.setframerate(sr)
+            w.writeframes((np.clip(a, -1, 1) * 32767).astype(np.int16).tobytes())
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", i, "-af",
+                        f"rubberband=pitch={2 ** (demi_tons / 12)}:formant=preserved:pitchq=quality:transients=smooth", o], check=True)
+        with wave.open(o) as w:
+            return np.frombuffer(w.readframes(w.getnframes()), dtype=np.int16).astype(np.float32) / 32768
 
 
 def decouper(texte: str):
@@ -83,9 +102,9 @@ def main():
     sr = voix.config.sample_rate
     audio, segments, t = [], [], 0.0
     for phrase, ton in decouper(texte):
-        vitesse, var, regul, gain, pause = preset[ton]
-        if re.search(r"\bmat\b", phrase, re.I):  # « échec et mat » : toujours posé, sinon mal articulé
-            vitesse, pause = max(vitesse, 1.05), max(pause, 0.4)
+        if re.search(r"\bmat\b", phrase, re.I):  # « échec et mat » : posé, appuyé, plus haut
+            ton = "mat"
+        vitesse, var, regul, gain, pause, demi_tons = preset[ton]
         cfg = SynthesisConfig(speaker_id=PIERRE, length_scale=vitesse, noise_scale=var, noise_w_scale=regul)
         meilleur, meilleur_score = None, -1
         for _ in range(best):
@@ -105,7 +124,7 @@ def main():
                 meilleur, meilleur_score = prise, sc
             if sc >= 0.999:
                 break
-        a = meilleur
+        a = hauteur(meilleur, sr, demi_tons)
         if best > 1:
             print(f"{100*meilleur_score:5.0f} %  {phrase}")
         a = a * (10 ** (gain / 20))
