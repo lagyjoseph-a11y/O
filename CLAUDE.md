@@ -3,6 +3,9 @@
 Vidéos TikTok verticales (1080×1920) de pièges d'échecs, faites avec Remotion (`remotion/`).
 
 ## Règles obligatoires
+- **GitHub : tout en PRIVÉ.** Chaque dépôt utilisé ou créé doit être privé (visibilité « Private »). Ne jamais créer
+  de dépôt public. Si un dépôt est public, le signaler tout de suite à l'utilisateur. Ne jamais y mettre de secret
+  (clé privée des codes Pro, .env), ni le code du site GambitClip (`site/`, livré en zip), ni la musique sous droits.
 - **Watermark `@gambit_frr` sur CHAQUE vidéo**, en bas, blanc semi-transparent (35 %). Il est intégré au modèle commun
   (`remotion/src/ChessLesson/brand.ts`) : ne jamais le retirer ni faire une vidéo hors de ce modèle sans lui.
   Vérifier sa présence sur une image avant d'envoyer une vidéo.
