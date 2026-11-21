@@ -34,22 +34,40 @@ def phonetique(t: str) -> str:
 
 # Réglages par ton : vitesse (length_scale, <1 = plus rapide), variation, régularité, gain dB, pause après (s)
 # Réglages par ton : vitesse (length_scale, >1 = plus lent), variation, régularité, gain dB, pause après (s), hauteur (demi-tons)
+# Réglages par ton : vitesse (length_scale, >1 = plus lent), variation, régularité, gain dB, pause après (s)
+# Plus aucun changement de hauteur artificiel (il donnait un son métallique) : l'expressivité vient
+# du choix, parmi plusieurs prises bien articulées, de celle dont l'intonation varie le plus.
 PRESETS = {
     "epique": {
-        "exclamation": (0.97, 0.60, 0.40, 3.0, 0.25, +1.5),
-        "question": (1.00, 0.60, 0.40, 1.0, 0.35, +1.0),
-        "suspense": (1.10, 0.55, 0.35, -1.0, 0.60, -1.0),
-        "normal": (1.00, 0.58, 0.40, 0.0, 0.25, 0.0),
-        "mat": (1.18, 0.55, 0.35, 4.0, 0.50, +2.0),
+        "exclamation": (0.97, 0.68, 0.45, 3.0, 0.25),
+        "question": (1.00, 0.66, 0.45, 1.0, 0.35),
+        "suspense": (1.08, 0.62, 0.40, -1.0, 0.60),
+        "normal": (1.00, 0.62, 0.42, 0.0, 0.25),
+        "mat": (1.12, 0.62, 0.40, 4.0, 0.50),
     },
     "clair": {
-        "exclamation": (1.00, 0.55, 0.40, 1.5, 0.25, 0.0),
-        "question": (1.02, 0.55, 0.40, 0.5, 0.30, 0.0),
-        "suspense": (1.10, 0.50, 0.35, 0.0, 0.55, 0.0),
-        "normal": (1.02, 0.55, 0.40, 0.0, 0.25, 0.0),
-        "mat": (1.15, 0.50, 0.35, 2.0, 0.50, 0.0),
+        "exclamation": (1.00, 0.55, 0.40, 1.5, 0.25),
+        "question": (1.02, 0.55, 0.40, 0.5, 0.30),
+        "suspense": (1.10, 0.50, 0.35, 0.0, 0.55),
+        "normal": (1.02, 0.55, 0.40, 0.0, 0.25),
+        "mat": (1.15, 0.50, 0.35, 2.0, 0.50),
     },
 }
+
+
+def expressivite(a, sr, ton):
+    """Variation de l'intonation (écart-type de la hauteur en demi-tons) ; bonus si une exclamation finit plus haut."""
+    import librosa
+    f0, _, _ = librosa.pyin(a, fmin=70, fmax=300, sr=sr, frame_length=1024)
+    f0 = f0[~np.isnan(f0)]
+    if len(f0) < 8:
+        return 0.0
+    st = 12 * np.log2(f0 / np.median(f0))
+    bonus = 0.0
+    if ton in ("exclamation", "mat"):
+        q = len(st) // 3
+        bonus = max(0.0, np.mean(st[-q:]) - np.mean(st[:q])) * 0.5 + np.percentile(st, 90) * 0.3
+    return float(np.std(st) + bonus)
 
 
 def hauteur(a, sr, demi_tons):
@@ -68,13 +86,25 @@ def hauteur(a, sr, demi_tons):
             return np.frombuffer(w.readframes(w.getnframes()), dtype=np.int16).astype(np.float32) / 32768
 
 
-def decouper(texte: str):
-    morceaux = re.findall(r"[^.!?…]+(?:[.!?…]+|$)", texte)
+def fusionner(morceaux, mini=5):
+    """Piper sonne « robot » sur les phrases très courtes (pas assez de contexte pour l'intonation) :
+    une phrase de moins de `mini` mots est fusionnée avec la suivante (ou la précédente si c'est la dernière)."""
     out = []
     for m in morceaux:
-        m = m.strip()
-        if not m:
-            continue
+        if out and len(out[-1].split()) < mini:
+            out[-1] = re.sub(r"\s*[.!?…]+$", ",", out[-1].rstrip()) + " " + m[0].lower() + m[1:]
+        else:
+            out.append(m)
+    if len(out) > 1 and len(out[-1].split()) < mini:
+        dernier = out.pop()
+        out[-1] = re.sub(r"\s*[.!?…]+$", ",", out[-1].rstrip()) + " " + dernier[0].lower() + dernier[1:]
+    return out
+
+
+def decouper(texte: str):
+    morceaux = fusionner([m.strip() for m in re.findall(r"[^.!?…]+(?:[.!?…]+|$)", texte) if m.strip()])
+    out = []
+    for m in morceaux:
         ton = "exclamation" if m.endswith("!") else "question" if m.endswith("?") else "suspense" if m.endswith("…") else "normal"
         out.append((m, ton))
     return out
@@ -104,9 +134,9 @@ def main():
     for phrase, ton in decouper(texte):
         if re.search(r"\bmat\b", phrase, re.I):  # « échec et mat » : posé, appuyé, plus haut
             ton = "mat"
-        vitesse, var, regul, gain, pause, demi_tons = preset[ton]
+        vitesse, var, regul, gain, pause = preset[ton]
         cfg = SynthesisConfig(speaker_id=PIERRE, length_scale=vitesse, noise_scale=var, noise_w_scale=regul)
-        meilleur, meilleur_score = None, -1
+        prises = []
         for _ in range(best):
             buf = io.BytesIO()
             with wave.open(buf, "wb") as w:
@@ -115,18 +145,20 @@ def main():
             with wave.open(buf) as w:
                 prise = np.frombuffer(w.readframes(w.getnframes()), dtype=np.int16).astype(np.float32) / 32768
             if best == 1:
-                meilleur = prise
+                prises.append((1.0, 0.0, prise))
                 break
             import librosa
             segs, _ = juge.transcribe(librosa.resample(prise, orig_sr=sr, target_sr=16000), language="fr", beam_size=5)
-            sc = score(phrase, " ".join(x.text for x in segs))
-            if sc > meilleur_score:
-                meilleur, meilleur_score = prise, sc
-            if sc >= 0.999:
-                break
-        a = hauteur(meilleur, sr, demi_tons)
+            segs = list(segs)
+            confiance = float(np.mean([x.avg_logprob for x in segs])) if segs else -9.0
+            prises.append((score(phrase, " ".join(x.text for x in segs)), confiance, prise))
+        # 1) articulation (prises les mieux comprises), 2) puis la plus naturelle : celle dont Whisper est le plus sûr.
+        # (Choisir « la plus expressive » favorisait des prises qui déraillent, au son robotique.)
+        top = max(p[0] for p in prises)
+        clarte, conf, meilleur = max((p for p in prises if p[0] >= top - 0.02), key=lambda p: p[1])
         if best > 1:
-            print(f"{100*meilleur_score:5.0f} %  {phrase}")
+            print(f"{100*clarte:5.0f} % compris · confiance {conf:5.2f} · {phrase}")
+        a = meilleur
         a = a * (10 ** (gain / 20))
         segments.append({"texte": phrase, "ton": ton, "debut": round(t, 3), "fin": round(t + len(a) / sr, 3)})
         audio += [a, np.zeros(int(pause * sr), dtype=np.float32)]
